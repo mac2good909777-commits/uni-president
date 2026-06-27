@@ -233,7 +233,7 @@ body{padding-top:54px;}
 }
 
 /* ===== Track Record Section ===== */
-.track{background:var(--cream);padding:60px 24px;border-top:1px solid var(--line);}
+.track{background:var(--cream);padding:48px 24px 52px;border-top:1px solid var(--line);}
 .track h2{font-size:20px;color:var(--forest);border-left:4px solid var(--green);padding:8px 14px;margin-bottom:24px;background:linear-gradient(90deg,var(--cream) 0%,transparent 100%);}
 .track .inner{background:var(--forest);border-radius:16px;padding:36px 36px 32px;display:grid;grid-template-columns:1fr 310px;gap:36px;align-items:start;max-width:1080px;margin:0 auto;}
 .track .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;}
@@ -259,11 +259,12 @@ body{padding-top:54px;}
 .track .stat .n{font-size:32px;font-weight:700;color:var(--gold);line-height:1.1;}
 .track .stat .u{font-size:11px;color:rgba(255,255,255,.6);}
 .track .stat .l{font-size:12.5px;color:#cfe0d2;margin-top:4px;}
-.track .service-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;max-width:1080px;margin-left:auto;margin-right:auto;}
-.track .stag{background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 16px;font-size:13px;color:var(--forest);}
+.track .service-tags{display:flex;flex-wrap:wrap;gap:8px;grid-column:1 / -1;border-top:1px solid rgba(255,255,255,.15);padding-top:22px;margin-top:8px;}
+.track .stag{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 16px;font-size:13px;color:rgba(255,255,255,.88);}
 @media(max-width:760px){
   .track .inner{grid-template-columns:1fr;}
   .track .stats{grid-template-columns:repeat(2,1fr);}
+  .track .service-tags{grid-column:1;}
 }
 /* ===== Closing Section ===== */
 .closing{background:var(--forest);color:#cfe0d2;padding:72px 24px 56px;text-align:center;}
@@ -282,7 +283,7 @@ body{padding-top:54px;}
 .closing .card a{color:var(--gold);text-decoration:none;}
 .closing .card a:hover{text-decoration:underline;}
 /* ===== About Section ===== */
-.about{background:#fff;padding:60px 24px;border-top:1px solid var(--line);}
+.about{background:#fff;padding:48px 24px 56px;border-top:1px solid var(--line);}
 .about h2{font-size:20px;color:var(--forest);border-left:4px solid var(--green);padding:8px 14px;margin-bottom:28px;background:linear-gradient(90deg,var(--cream) 0%,transparent 100%);}
 .about .inner{display:grid;grid-template-columns:320px 1fr;gap:30px;max-width:1080px;margin:0 auto;align-items:start;}
 .about .left-card{background:var(--forest);color:#fff;border-radius:14px;padding:32px 24px;text-align:center;}
@@ -637,15 +638,15 @@ body{padding-top:54px;}
       <div class="stat"><div class="n">16,869</div><div class="u">㎡ 累計活化</div><div class="l">閒置土地</div></div>
       <div class="stat"><div class="n">14</div><div class="u">位專業</div><div class="l">團隊成員</div></div>
     </div>
-  </div>
-  <div class="service-tags" style="max-width:1080px;margin:20px auto 0;">
-    <span class="stag">廠房・產業用地買賣媒合</span>
-    <span class="stag">廠房・廠地租賃仲介</span>
-    <span class="stag">企業設廠選址評估</span>
-    <span class="stag">工業用地法規諮詢</span>
-    <span class="stag">市地重劃開發媒合</span>
-    <span class="stag">土地使用分區變更</span>
-    <span class="stag">區段徵收與整合開發</span>
+    <div class="service-tags">
+      <span class="stag">廠房・產業用地買賣媒合</span>
+      <span class="stag">廠房・廠地租賃仲介</span>
+      <span class="stag">企業設廠選址評估</span>
+      <span class="stag">工業用地法規諮詢</span>
+      <span class="stag">市地重劃開發媒合</span>
+      <span class="stag">土地使用分區變更</span>
+      <span class="stag">區段徵收與整合開發</span>
+    </div>
   </div>
 </section>
 
