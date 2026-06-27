@@ -307,6 +307,27 @@ body{padding-top:54px;}
   .about .inner{grid-template-columns:1fr;}
   .about .contact-grid{grid-template-columns:1fr;}
 }
+/* ===== Calculator Section ===== */
+.calc-plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;}
+.calc-plan{border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+.calc-plan.a{border-top:3px solid var(--green);}
+.calc-plan.b{border-top:3px solid #B9Bfc7;}
+.calc-plan-head{background:var(--forest);color:#fff;padding:12px 16px;}
+.calc-plan-head h4{font-size:14px;font-weight:700;margin-bottom:2px;}
+.calc-plan-head span{font-size:12px;color:rgba(255,255,255,.65);}
+.calc-plan table{width:100%;border-collapse:collapse;font-size:13px;}
+.calc-plan table th{background:#f5f5f2;color:#555;padding:7px 10px;text-align:left;font-weight:600;font-size:12px;border-bottom:1px solid var(--line);}
+.calc-plan table td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:middle;}
+.calc-plan table td.num{text-align:right;font-variant-numeric:tabular-nums;}
+.calc-plan table tr:last-child td{border-bottom:none;}
+.calc-plan table input[type=number]{width:72px;padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:13px;text-align:right;color:var(--forest);font-family:inherit;-moz-appearance:textfield;}
+.calc-plan table input[type=number]::-webkit-inner-spin-button,.calc-plan table input[type=number]::-webkit-outer-spin-button{opacity:1;}
+.calc-plan table input[type=number]:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 2px rgba(75,135,47,.15);}
+.calc-total{background:var(--cream);border-top:2px solid var(--gold);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px;}
+.calc-total .label{font-size:13px;color:#555;font-weight:600;}
+.calc-total .val{font-size:18px;font-weight:700;color:var(--gold);}
+.calc-total .sub{font-size:12px;color:var(--muted);margin-left:4px;}
+@media(max-width:760px){.calc-plans{grid-template-columns:1fr;}}
 /* ===== Print: A4 landscape ===== */
 @media print{
   @page{ size:A4 landscape; margin:9mm; }
@@ -595,7 +616,55 @@ body{padding-top:54px;}
 
     <div class="note"><b>關於時間點：</b>本案已進入最後成熟成交階段——賣方意願明確（回到整廠）、整廠買方齊聚、價格收斂。當「整廠買方增加、行情走升、區位利多兌現、屋主仍具偏好」同時存在，目前的價格與議價條件相對不易再向下。這並非斷言價格走向，而是提醒——若評估後確有需求，<b>越早與母公司形成共識，越能在屋主仍具偏好時把握較順暢的條件</b>；最終仍取決於 貴公司的整體策略與個案議價。</div>
 
-    <div class="risk" style="margin-top:16px;">
+  </div><!-- /s05 -->
+
+  <!-- ===== Section 06 ===== -->
+  <div class="section" id="s06">
+    <h2><span class="n">06</span>兩方案總價試算 — 可自行填入單價</h2>
+    <p class="lead">各分區坪數為固定值（依地籍資料），請於「單價」欄位自行填入（萬／坪），系統即時換算各分區小計與方案總價。農業區預設 0，若一併計價請自行填入。</p>
+    <div class="calc-plans">
+      <div class="calc-plan a">
+        <div class="calc-plan-head">
+          <h4>方案二・整廠出售</h4>
+          <span>合計 7,866.72 坪</span>
+        </div>
+        <table>
+          <thead><tr><th>分區</th><th>坪數（固定）</th><th>單價（萬／坪）</th><th class="num">小計（萬元）</th></tr></thead>
+          <tbody>
+            <tr><td>乙種工業區</td><td>7,139.75</td><td><input type="number" id="a1" value="30" min="0" step="0.5" oninput="calcA()"></td><td class="num" id="a1s">—</td></tr>
+            <tr><td>道路用地</td><td>661.16</td><td><input type="number" id="a2" value="5.8" min="0" step="0.1" oninput="calcA()"></td><td class="num" id="a2s">—</td></tr>
+            <tr><td>農業區</td><td>65.81</td><td><input type="number" id="a3" value="0" min="0" step="0.5" oninput="calcA()"></td><td class="num" id="a3s">—</td></tr>
+          </tbody>
+        </table>
+        <div class="calc-total">
+          <span class="label">方案二 總價</span>
+          <span><span class="val" id="atotal">—</span><span class="sub" id="ayi"></span></span>
+        </div>
+      </div>
+      <div class="calc-plan b">
+        <div class="calc-plan-head">
+          <h4>方案一・部分購置</h4>
+          <span>合計 2,383.61 坪</span>
+        </div>
+        <table>
+          <thead><tr><th>分區</th><th>坪數（固定）</th><th>單價（萬／坪）</th><th class="num">小計（萬元）</th></tr></thead>
+          <tbody>
+            <tr><td>乙種工業區</td><td>2,133.58</td><td><input type="number" id="b1" value="30" min="0" step="0.5" oninput="calcB()"></td><td class="num" id="b1s">—</td></tr>
+            <tr><td>道路用地</td><td>249.51</td><td><input type="number" id="b2" value="5.8" min="0" step="0.1" oninput="calcB()"></td><td class="num" id="b2s">—</td></tr>
+            <tr><td>農業區</td><td>0.52</td><td><input type="number" id="b3" value="0" min="0" step="0.5" oninput="calcB()"></td><td class="num" id="b3s">—</td></tr>
+          </tbody>
+        </table>
+        <div class="calc-total">
+          <span class="label">方案一 總價</span>
+          <span><span class="val" id="btotal">—</span><span class="sub" id="byi"></span></span>
+        </div>
+      </div>
+    </div>
+    <p class="cap" style="margin-top:10px;">＊坪數依地籍量算固定值（方案二：乙工 7,139.75 + 道路 661.16 + 農業 65.81 = 7,866.72 坪；方案一：乙工 2,133.58 + 道路 249.51 + 農業 0.52 = 2,383.61 坪）。最終以實測面積及屋主股東會／董事會決議為準。</p>
+  </div>
+
+  <div class="section" id="s06b">
+    <div class="risk">
       <h3>ℹ 盡職調查提醒（中立揭露，協助完整評估）</h3>
       <ul>
         <li>價格與條件以屋主股東會／董事會最終決議為準；本說明為截至近日之溝通狀態整理，仍有變動可能。</li>
@@ -726,4 +795,31 @@ body{padding-top:54px;}
   <span class="s">價格與條件以屋主股東會／董事會最終決議為準，最終取捨保留予 貴公司判斷。</span>
 </footer>
 
+<script>
+function fmt(n){return n.toLocaleString('zh-TW',{maximumFractionDigits:1});}
+function toYi(n){return n>=1000?'（約 '+(n/10000).toFixed(2)+' 億）':'';}
+function calcA(){
+  var p1=parseFloat(document.getElementById('a1').value)||0;
+  var p2=parseFloat(document.getElementById('a2').value)||0;
+  var p3=parseFloat(document.getElementById('a3').value)||0;
+  var s1=7139.75*p1,s2=661.16*p2,s3=65.81*p3,tot=s1+s2+s3;
+  document.getElementById('a1s').textContent=p1?fmt(Math.round(s1*10)/10):'—';
+  document.getElementById('a2s').textContent=p2?fmt(Math.round(s2*10)/10):'—';
+  document.getElementById('a3s').textContent=p3?fmt(Math.round(s3*10)/10):'—';
+  document.getElementById('atotal').textContent=tot?fmt(Math.round(tot))+' 萬元':'—';
+  document.getElementById('ayi').textContent=toYi(tot);
+}
+function calcB(){
+  var p1=parseFloat(document.getElementById('b1').value)||0;
+  var p2=parseFloat(document.getElementById('b2').value)||0;
+  var p3=parseFloat(document.getElementById('b3').value)||0;
+  var s1=2133.58*p1,s2=249.51*p2,s3=0.52*p3,tot=s1+s2+s3;
+  document.getElementById('b1s').textContent=p1?fmt(Math.round(s1*10)/10):'—';
+  document.getElementById('b2s').textContent=p2?fmt(Math.round(s2*10)/10):'—';
+  document.getElementById('b3s').textContent=p3?fmt(Math.round(s3*10)/10):'—';
+  document.getElementById('btotal').textContent=tot?fmt(Math.round(tot))+' 萬元':'—';
+  document.getElementById('byi').textContent=toYi(tot);
+}
+window.addEventListener('DOMContentLoaded',function(){calcA();calcB();});
+</script>
 </body></html>
