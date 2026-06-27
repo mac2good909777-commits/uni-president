@@ -232,6 +232,39 @@ body{padding-top:54px;}
   table.t th,table.t td{ padding:6px 8px; white-space:nowrap; }
 }
 
+/* ===== Track Record Section ===== */
+.track{background:var(--cream);padding:60px 24px;border-top:1px solid var(--line);}
+.track h2{font-size:20px;color:var(--forest);border-left:4px solid var(--green);padding:8px 14px;margin-bottom:24px;background:linear-gradient(90deg,var(--cream) 0%,transparent 100%);}
+.track .inner{background:var(--forest);border-radius:16px;padding:36px 36px 32px;display:grid;grid-template-columns:1fr 260px;gap:32px;align-items:start;max-width:1080px;margin:0 auto;}
+.track .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;}
+.track .badge-gold{background:var(--gold);color:var(--forest);font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;letter-spacing:.5px;}
+.track .badge-outline{border:1px solid rgba(255,255,255,.4);color:#cfe0d2;font-size:12px;padding:5px 14px;border-radius:20px;}
+.track .inner h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:1px;}
+.track .inner p{font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.9;margin-bottom:20px;}
+.track .inner p b{color:var(--gold);}
+.track .browser{background:#fff;border-radius:10px;padding:0;overflow:hidden;max-width:480px;}
+.track .browser .bar{background:#f0f0f0;padding:9px 14px;display:flex;align-items:center;gap:6px;}
+.track .browser .dots{display:flex;gap:4px;}
+.track .browser .dot{width:10px;height:10px;border-radius:50%;}
+.track .browser .dot.r{background:#ff5f57;}
+.track .browser .dot.y{background:#febc2e;}
+.track .browser .dot.g{background:#28c840;}
+.track .browser .url{font-size:11.5px;color:#666;background:#fff;border-radius:4px;padding:3px 10px;flex:1;border:1px solid #ddd;}
+.track .browser .content{padding:20px 22px;}
+.track .browser .eng3{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:3px;margin-bottom:8px;}
+.track .browser h4{font-size:16px;font-weight:700;color:var(--forest);margin-bottom:14px;}
+.track .browser a{color:var(--forest);font-size:13px;font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;}
+.track .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.track .stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:18px 14px;text-align:center;}
+.track .stat .n{font-size:32px;font-weight:700;color:var(--gold);line-height:1.1;}
+.track .stat .u{font-size:11px;color:rgba(255,255,255,.6);}
+.track .stat .l{font-size:12.5px;color:#cfe0d2;margin-top:4px;}
+.track .service-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;max-width:1080px;margin-left:auto;margin-right:auto;}
+.track .stag{background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 16px;font-size:13px;color:var(--forest);}
+@media(max-width:760px){
+  .track .inner{grid-template-columns:1fr;}
+  .track .stats{grid-template-columns:repeat(2,1fr);}
+}
 /* ===== Closing Section ===== */
 .closing{background:var(--forest);color:#cfe0d2;padding:70px 24px 60px;text-align:center;margin-top:60px;}
 .closing .eng2{color:var(--gold);letter-spacing:8px;font-size:13px;font-weight:600;margin-bottom:18px;}
@@ -556,6 +589,49 @@ body{padding-top:54px;}
   </div>
 
 </div>
+
+<!-- ===== Track Record ===== -->
+<section class="track">
+  <div class="wrap" style="max-width:1080px;margin:0 auto;">
+    <h2>本業實績　｜　經濟部產業用地媒合專案・官方專案網站</h2>
+  </div>
+  <div class="inner" style="max-width:1080px;margin:0 auto;">
+    <div>
+      <div class="badges">
+        <span class="badge-gold">★ 經濟部產業園區管理局　委託專案</span>
+        <span class="badge-outline">115 年度進行中</span>
+      </div>
+      <h3>瑞禾開發　產業用地媒合專案網站</h3>
+      <p>瑞禾開發受 <b>經濟部</b> 委託執行產業用地媒合專案，服務範圍涵蓋 <b>苗栗、臺中、彰化、南投</b> 四大行政區、共 <b>19 處產業園區</b>，定位為「產業發展之執行推手」，搭建公部門、地主與廠商間的媒合平台。本案所屬廠房即由此一專業團隊與通路網絡直接執行。</p>
+      <div class="browser">
+        <div class="bar">
+          <div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="url">🔒 reihe-industrial.github.io/web</div>
+        </div>
+        <div class="content">
+          <div class="eng3">RUEI.HE INDUSTRIAL</div>
+          <h4>深耕中臺灣・工業地產專業服務</h4>
+          <a href="https://reihe-industrial.github.io/web" target="_blank">前往瀏覽官方專案網站　→</a>
+        </div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">8</div><div class="u">年連續承接</div><div class="l">經濟部媒合專案</div></div>
+      <div class="stat"><div class="n">19</div><div class="u">處產業園區</div><div class="l">媒合網絡</div></div>
+      <div class="stat"><div class="n">16,869</div><div class="u">㎡ 累計活化</div><div class="l">閒置土地</div></div>
+      <div class="stat"><div class="n">14</div><div class="u">位專業</div><div class="l">團隊成員</div></div>
+    </div>
+  </div>
+  <div class="service-tags" style="max-width:1080px;margin:20px auto 0;">
+    <span class="stag">廠房・產業用地買賣媒合</span>
+    <span class="stag">廠房・廠地租賃仲介</span>
+    <span class="stag">企業設廠選址評估</span>
+    <span class="stag">工業用地法規諮詢</span>
+    <span class="stag">市地重劃開發媒合</span>
+    <span class="stag">土地使用分區變更</span>
+    <span class="stag">區段徵收與整合開發</span>
+  </div>
+</section>
 
 <!-- ===== Closing ===== -->
 <section class="closing">
