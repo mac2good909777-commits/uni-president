@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>興國橡膠廠（大肚乙工）購置案・賣方轉向整廠出售・決策建議｜瑞禾開發</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --forest:#2B5937; --green:#4B872F; --gold:#C0A434; --cream:#F5F3EE;
+  --text:#333; --muted:#888; --line:#E8E6E1; --up:#4B872F; --down:#C0533A;
+}
+body{
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  background:#fff; color:var(--text); line-height:1.8; -webkit-font-smoothing:antialiased;
+}
+.wrap{ max-width:1080px; margin:0 auto; padding:0 40px; }
+
+/* ===== Header ===== */
+.hero{ background:var(--forest); color:#fff; position:relative; overflow:hidden;
+  border-bottom:3px solid var(--gold); }
+.hero .wrap{ display:flex; align-items:center; gap:26px; padding:30px 40px 28px; }
+.hero .logo{ background:#fff; border-radius:9px; padding:9px 12px; display:flex; align-items:center; flex:0 0 auto; }
+.hero .logo img{ width:78px; height:auto; display:block; }
+.hero .htext{ flex:1; }
+.hero .badge{ display:inline-block; background:var(--gold); color:var(--forest);
+  padding:4px 13px; border-radius:3px; font-size:12px; font-weight:700; letter-spacing:1px; margin-bottom:9px; }
+.hero h1{ font-size:25px; font-weight:700; letter-spacing:.5px; line-height:1.42; }
+.hero .sub{ font-size:14px; opacity:.92; margin-top:8px; max-width:780px; }
+.hero .meta{ display:flex; flex-wrap:wrap; gap:18px; font-size:12.5px; opacity:.85;
+  border-top:1px solid rgba(255,255,255,.22); padding-top:13px; margin-top:14px; }
+.hero .meta b{ color:var(--gold); font-weight:600; }
+
+/* ===== BLUF ===== */
+.bluf{ background:var(--cream); border-left:4px solid var(--gold); padding:24px 28px; margin:30px 0 8px; }
+.bluf h2{ color:var(--forest); font-size:18px; margin-bottom:6px; }
+.bluf .lead0{ font-size:13px; color:var(--muted); margin-bottom:14px; }
+.bluf .row{ display:flex; gap:13px; align-items:flex-start; font-size:14.5px; margin-bottom:12px; }
+.bluf .row:last-child{ margin-bottom:0; }
+.bluf .ic{ flex:0 0 24px; height:24px; background:var(--green); color:#fff; border-radius:50%;
+  font-weight:700; font-size:14px; line-height:24px; text-align:center; }
+.bluf .row b{ color:var(--forest); }
+.bluf .row .g{ color:var(--gold); font-weight:700; }
+.bluf .row .d{ color:var(--down); font-weight:700; }
+
+/* ===== Section ===== */
+.section{ margin:34px 0; }
+.section > h2{ font-size:20px; color:var(--forest); border-left:4px solid var(--green);
+  padding:8px 14px; margin-bottom:14px; background:linear-gradient(90deg,var(--cream) 0%,transparent 100%); }
+.section > h2 .n{ color:var(--gold); font-weight:800; margin-right:9px; }
+.lead{ font-size:14.5px; color:#4a4a4a; margin-bottom:16px; }
+.lead b{ color:var(--forest); }
+
+/* ===== KPI ===== */
+.kpi-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:6px 0 4px; }
+.kpi{ background:#F8F8F5; border:1px solid var(--line); border-radius:4px; padding:15px 16px; }
+.kpi .l{ font-size:12px; color:#666; margin-bottom:5px; }
+.kpi .v{ font-size:24px; font-weight:700; color:var(--gold); line-height:1.15; }
+.kpi .v small{ font-size:13px; color:var(--green); font-weight:600; margin-left:3px; }
+.kpi .h{ font-size:11px; color:var(--muted); margin-top:4px; }
+.kpi.up .v{ color:var(--up); }
+
+/* ===== Tables ===== */
+.tbl-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+table.t{ width:100%; border-collapse:collapse; font-size:13px; border:1px solid var(--line); }
+table.t th{ background:var(--forest); color:#fff; padding:9px 11px; text-align:left; font-weight:600; white-space:nowrap; }
+table.t td{ padding:8px 11px; border-bottom:1px solid var(--line); vertical-align:top; }
+table.t tr:nth-child(even){ background:#F8F8F5; }
+table.t .num{ text-align:right; font-variant-numeric:tabular-nums; }
+table.t tr.hl{ background:rgba(75,135,47,.12) !important; }
+table.t tr.hl td{ font-weight:600; }
+table.t tr.dim td{ color:#9a9a9a; }
+.cap{ font-size:12px; color:var(--muted); margin-top:8px; line-height:1.7; }
+.tag{ display:inline-block; padding:1px 7px; border-radius:3px; font-size:11px; font-weight:600; }
+.tag-our{ background:#E8F0E0; color:var(--green); }
+.tag-full{ background:#F1ECE0; color:#8a7320; }
+.tag-out{ background:#EEE; color:#999; }
+.tag-other{ background:#EEF0F3; color:#5b6573; }
+
+/* ===== Shift (before/after) ===== */
+.shift{ display:grid; grid-template-columns:1fr 44px 1fr; gap:12px; align-items:stretch; margin:8px 0; }
+.shift .s{ border:1px solid var(--line); border-radius:4px; padding:16px 18px; }
+.shift .s.was{ background:#FAFAF8; }
+.shift .s.now{ background:#FAFCF8; border-top:3px solid var(--green); }
+.shift .s h4{ font-size:13px; margin-bottom:7px; letter-spacing:.5px; }
+.shift .s.was h4{ color:var(--muted); }
+.shift .s.now h4{ color:var(--green); }
+.shift .s p{ font-size:13.5px; color:#4a4a4a; }
+.shift .s p b{ color:var(--forest); }
+.shift .arr{ display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:26px; font-weight:700; }
+
+/* ===== Timeline ===== */
+.timeline{ border-left:2px solid var(--line); margin:14px 0 6px 10px; }
+.tl{ position:relative; padding:0 0 17px 24px; }
+.tl:last-child{ padding-bottom:2px; }
+.tl::before{ content:''; position:absolute; left:-8px; top:4px; width:12px; height:12px; border-radius:50%;
+  background:var(--green); box-shadow:0 0 0 3px #fff, 0 0 0 4px var(--green); }
+.tl.now::before{ background:var(--gold); box-shadow:0 0 0 3px #fff, 0 0 0 4px var(--gold); width:14px; height:14px; left:-9px; }
+.tl .d{ font-size:12px; font-weight:700; color:var(--gold); letter-spacing:.5px; }
+.tl b{ display:block; color:var(--forest); font-size:14.5px; margin:1px 0 2px; }
+.tl.now b{ color:var(--green); }
+.tl p{ font-size:13px; color:#555; }
+.tl p b{ display:inline; color:var(--forest); }
+
+/* ===== Trust ===== */
+.trust{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:6px 0; }
+.trust .ti{ display:flex; gap:11px; align-items:flex-start; border:1px solid var(--line);
+  border-radius:4px; padding:13px 16px; font-size:13.5px; }
+.trust .ti .k{ flex:0 0 26px; height:26px; background:var(--forest); color:#fff; border-radius:50%;
+  text-align:center; line-height:26px; font-weight:700; font-size:13px; }
+.trust .ti b{ color:var(--forest); }
+
+/* ===== advantages / bridge ===== */
+.adv{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:6px 0; }
+.adv .a{ border:1px solid var(--line); border-left:3px solid var(--green); border-radius:0 4px 4px 0;
+  padding:12px 16px; font-size:13.5px; }
+.adv .a b{ color:var(--forest); display:block; margin-bottom:2px; }
+.adv .a span{ color:#666; font-size:12.5px; }
+
+.bridge{ display:grid; grid-template-columns:1.3fr 1fr; gap:16px; align-items:center;
+  border:1px solid var(--line); border-radius:4px; padding:18px 22px; background:#FAFCF8; margin:6px 0; }
+.bridge .bt b{ color:var(--forest); }
+.bridge .bt p{ font-size:13.5px; color:#4a4a4a; margin-top:6px; }
+.bridge .bk{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.bridge .bk .x{ background:#fff; border:1px solid var(--line); border-radius:4px; text-align:center; padding:11px 8px; }
+.bridge .bk .x .n{ font-size:19px; font-weight:700; color:var(--gold); line-height:1.1; }
+.bridge .bk .x .l{ font-size:11px; color:#666; margin-top:3px; }
+
+/* ===== Note / reco ===== */
+.note{ background:var(--cream); border-left:4px solid var(--green); border-radius:0 4px 4px 0;
+  padding:15px 18px; font-size:13.5px; color:#3a463a; margin:16px 0; }
+.note b{ color:var(--forest); }
+.reco{ border:1.5px solid var(--gold); border-radius:5px; background:#FCFAF2; padding:18px 22px; margin:14px 0; }
+.reco h3{ color:var(--forest); font-size:16px; margin-bottom:8px; }
+.reco h3 .badge2{ background:var(--green); color:#fff; font-size:11px; font-weight:700; padding:2px 9px; border-radius:3px; margin-left:8px; vertical-align:middle; }
+.reco p{ font-size:13.5px; color:#4a4a4a; }
+
+/* ===== paths ===== */
+.paths{ display:grid; grid-template-columns:1.1fr 1fr; gap:14px; margin:10px 0 4px; }
+.path{ border:1px solid var(--line); border-radius:4px; padding:16px 20px; }
+.path.a{ border-top:3px solid var(--green); background:#FAFCF8; }
+.path.b{ border-top:3px solid #B9Bfc7; }
+.path h4{ font-size:14.5px; color:var(--forest); margin-bottom:4px; }
+.path .tagline{ font-size:12px; font-weight:700; margin-bottom:8px; }
+.path.a .tagline{ color:var(--green); }
+.path.b .tagline{ color:var(--muted); }
+.path ul{ padding-left:18px; font-size:13px; color:#555; } .path li{ margin-bottom:5px; }
+.path .pr{ font-size:13px; color:var(--text); margin:8px 0 4px; padding-top:8px; border-top:1px solid var(--line); }
+.path .pr b{ color:var(--gold); font-size:15px; }
+
+.risk{ border:1px dashed var(--gold); border-radius:4px; padding:16px 20px; font-size:13.5px; color:#4a432a; }
+.risk h3{ color:var(--forest); font-size:15px; margin-bottom:8px; }
+.risk ul{ padding-left:20px; } .risk li{ margin-bottom:6px; }
+
+.method{ font-size:12px; color:var(--muted); background:#FAFAF8; border:1px solid var(--line);
+  border-radius:4px; padding:14px 18px; line-height:1.75; margin-top:10px; }
+.method b{ color:#555; } .method .linkref{ color:var(--green); }
+
+/* ===== Fixed Top Nav ===== */
+.topnav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(43,89,55,.96);backdrop-filter:blur(6px);
+  display:flex;align-items:center;gap:6px;padding:10px 22px;flex-wrap:wrap;
+  box-shadow:0 2px 12px rgba(0,0,0,.25);
+}
+.topnav .brand{display:flex;align-items:center;gap:10px;margin-right:auto;}
+.topnav .brand img{height:34px;background:#fff;border-radius:6px;padding:2px;}
+.topnav .brand b{color:#fff;font-size:14px;letter-spacing:1px;}
+.topnav .brand span{color:var(--gold);font-size:11px;display:block;letter-spacing:2px;}
+.topnav a{color:#e8e8e0;text-decoration:none;font-size:12.5px;padding:6px 11px;border-radius:6px;transition:.2s;white-space:nowrap;}
+.topnav a:hover{background:var(--gold);color:#fff;}
+.topnav a.ext{color:var(--gold);border:1px solid rgba(192,164,52,.4);margin-left:4px;}
+.topnav a.ext:hover{background:rgba(192,164,52,.15);color:#fff;}
+body{padding-top:54px;}
+.bluf,.section{scroll-margin-top:64px;}
+/* ===== Cover ===== */
+.cover{
+  background:
+    radial-gradient(circle at 88% 18%,rgba(192,164,52,.18),transparent 42%),
+    linear-gradient(135deg,#1b3526 0%,#264a33 55%,#1e3d29 100%);
+  color:#fff;max-width:none;padding:120px 24px 70px;position:relative;overflow:hidden;
+}
+.cover .wrap{position:relative;z-index:2;}
+.cover .rice{position:absolute;right:-40px;top:40px;font-size:380px;color:rgba(255,255,255,.04);z-index:1;line-height:1;font-weight:900;pointer-events:none;}
+.cover .logo-box{display:flex;align-items:center;gap:16px;margin-bottom:34px;}
+.cover .logo-box img{height:80px;background:#fff;border-radius:12px;padding:6px;}
+.cover .logo-box .t b{font-size:18px;letter-spacing:2px;color:#fff;display:block;}
+.cover .logo-box .t span{display:block;color:var(--gold);font-size:12px;letter-spacing:3px;}
+.cover .eng{color:var(--gold);letter-spacing:8px;font-size:15px;font-weight:600;}
+.cover h1{font-size:42px;letter-spacing:3px;margin:14px 0 6px;line-height:1.3;color:#fff;}
+.cover h1 small{display:block;font-size:18px;color:rgba(255,255,255,.72);letter-spacing:2px;margin-top:8px;font-weight:400;}
+.cover .gold-band{height:4px;width:120px;background:var(--gold);margin:22px 0 30px;border-radius:2px;}
+.cover .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;max-width:920px;}
+.cover .kpi{background:rgba(255,255,255,.07);border:1px solid rgba(192,164,52,.35);border-radius:12px;padding:18px 14px;text-align:center;}
+.cover .kpi b{display:block;font-size:30px;color:#fff;line-height:1.1;}
+.cover .kpi b em{font-size:15px;font-style:normal;color:var(--gold);}
+.cover .kpi span{font-size:13px;color:rgba(255,255,255,.70);letter-spacing:1px;}
+.cover .foot{margin-top:40px;color:#cfe0d2;font-size:14px;border-top:1px solid rgba(255,255,255,.15);padding-top:18px;line-height:1.9;}
+.cover .foot b{color:#fff;}
+
+/* ===== Footer ===== */
+.footer{ background:var(--forest); color:#cfe0d2; margin-top:40px; padding:26px; text-align:center; font-size:13px; letter-spacing:.5px; border-top:3px solid var(--gold); }
+.footer b{ color:#fff; }
+.footer .s{ font-size:11.5px; opacity:.82; margin-top:6px; line-height:1.6; display:block; }
+
+/* ===== Mobile ===== */
+@media (max-width:820px){
+  .topnav{ padding:8px 14px; }
+  .topnav .brand span{ display:none; }
+  .topnav a{ font-size:11px; padding:5px 7px; }
+  body{ padding-top:48px; }
+  .cover{ padding:80px 16px 46px; }
+  .cover h1{ font-size:26px; }
+  .cover .kpis{ grid-template-columns:1fr 1fr; }
+  .cover .rice{ display:none; }
+  .wrap{ padding:0 16px; }
+  .hero .wrap{ flex-direction:column; align-items:flex-start; gap:14px; padding:22px 16px; }
+  .hero .logo{ padding:7px 9px; } .hero .logo img{ width:58px; }
+  .hero h1{ font-size:19px; }
+  .hero .meta{ gap:7px 16px; }
+  .bluf{ padding:18px 16px; } .bluf .row{ font-size:13.5px; }
+  .section>h2{ font-size:17px; }
+  .kpi-grid{ grid-template-columns:1fr 1fr; }
+  .kpi .v{ font-size:21px; }
+  .shift{ grid-template-columns:1fr; }
+  .shift .arr{ transform:rotate(90deg); height:30px; }
+  .trust{ grid-template-columns:1fr; }
+  .adv{ grid-template-columns:1fr; }
+  .bridge{ grid-template-columns:1fr; }
+  .paths{ grid-template-columns:1fr; }
+  table.t{ font-size:11.5px; min-width:520px; }
+  table.t th,table.t td{ padding:6px 8px; white-space:nowrap; }
+}
+
+/* ===== Print: A4 landscape ===== */
+@media print{
+  @page{ size:A4 landscape; margin:9mm; }
+  .topnav{ display:none !important; }
+  body{ padding-top:0 !important; }
+  .cover{ padding:24pt 22px 28pt !important; break-inside:avoid; }
+  .cover h1{ font-size:22pt !important; }
+  .cover .kpis{ grid-template-columns:repeat(4,1fr) !important; gap:8pt !important; }
+  .cover .kpi{ padding:10pt 8pt !important; } .cover .kpi b{ font-size:18pt !important; }
+  .cover .rice{ display:none; }
+  .cover .logo-box img{ height:52px !important; }
+  .cover .foot{ font-size:8.5pt !important; margin-top:14pt !important; padding-top:10pt !important; }
+  html,body{ width:285mm; font-size:9pt; line-height:1.5;
+    -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  .wrap{ max-width:1180px !important; width:1180px !important; padding:0 22px !important; }
+  .hero,.footer{ width:1180px !important; max-width:1180px !important; margin:0 auto !important; }
+  .hero .wrap{ flex-direction:row !important; padding:12pt 22px !important; gap:18px !important; }
+  .hero .logo{ padding:6px 8px !important; } .hero .logo img{ width:56px !important; }
+  .hero h1{ font-size:16pt !important; }
+  .hero .sub{ font-size:9pt !important; }
+  .hero .meta{ flex-wrap:nowrap !important; gap:16px !important; font-size:8pt !important; }
+  .bluf{ margin:12pt 0 6pt !important; padding:12pt 16pt !important; break-inside:avoid; }
+  .bluf h2{ font-size:12pt !important; } .bluf .row{ font-size:9.5pt !important; margin-bottom:6pt !important; }
+  .section{ margin:12pt 0 !important; }
+  .section>h2{ font-size:12.5pt !important; padding:6pt 12pt !important; break-after:avoid; }
+  .kpi-grid{ grid-template-columns:repeat(4,1fr) !important; gap:8pt !important; }
+  .kpi{ padding:9pt 11pt !important; break-inside:avoid; } .kpi .v{ font-size:16pt !important; }
+  .shift{ grid-template-columns:1fr 44px 1fr !important; break-inside:avoid; }
+  .shift .arr{ transform:none !important; }
+  .trust{ grid-template-columns:repeat(2,1fr) !important; } .trust .ti{ break-inside:avoid; }
+  .adv{ grid-template-columns:repeat(2,1fr) !important; } .adv .a{ break-inside:avoid; }
+  .bridge{ break-inside:avoid; }
+  .paths{ grid-template-columns:1.1fr 1fr !important; } .path{ break-inside:avoid; }
+  .reco{ break-inside:avoid; }
+  table.t{ font-size:8pt !important; } table.t th,table.t td{ padding:4pt 6pt !important; }
+  table.t thead{ display:table-header-group; } table.t tr{ break-inside:avoid; }
+  .note,.risk,.method{ break-inside:avoid; font-size:8.5pt !important; padding:9pt 13pt !important; }
+  .footer{ margin-top:10pt !important; padding:9pt 0 !important; font-size:8pt !important; break-inside:avoid; }
+  h2,h3,h4{ break-after:avoid; }
+  .section,.bluf,.kpi,table.t tr,.shift,.trust .ti,.adv .a,.note,.risk,.path,.reco,.tl{ break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="brand">
+    <img src="logo-瑞禾.png" alt="瑞禾開發">
+    <div><b>瑞禾開發 ｜ 建築・房產整合團隊</b><span>RUEI.HE REAL ESTATE DEVELOPMENT</span></div>
+  </div>
+  <a href="#bluf">近況摘要</a>
+  <a href="#s01">賣方意願</a>
+  <a href="#s02">買方全覽</a>
+  <a href="#s03">屋主偏好</a>
+  <a href="#s04">市場支撐</a>
+  <a href="#s05">評估建議</a>
+  <a href="大肚大面積工業用地成交個案分析(全家・全聯).html" class="ext">行情條件評估</a>
+  <a href="興國橡膠整廠物件全台對標分析.html" class="ext">實登個案比對</a>
+</nav>
+
+<section class="cover" id="cover">
+  <div class="rice">禾</div>
+  <div class="wrap">
+    <div class="logo-box">
+      <img src="logo-瑞禾.png" alt="瑞禾開發">
+      <div class="t"><b>瑞禾開發 ｜ 建築・房產整合團隊</b><span>RUEI.HE REAL ESTATE DEVELOPMENT</span></div>
+    </div>
+    <div class="eng">2026　ACQUISITION　ADVISORY</div>
+    <h1>興國橡膠廠購置案<br>進度說明與決策建議
+      <small>台中市大肚區・乙種工業區整廠 7,866 坪 ｜ 供 統一集團大統益 評估參考</small>
+    </h1>
+    <div class="gold-band"></div>
+    <div class="kpis">
+      <div class="kpi"><b>7,866<em> 坪</em></b><span>乙種工業區整廠面積</span></div>
+      <div class="kpi"><b>27<em> 萬/坪</em></b><span>整廠乙工回價（方案二）</span></div>
+      <div class="kpi"><b>約19.7<em> 億</em></b><span>整廠估算總價</span></div>
+      <div class="kpi"><b>3<em> km</em></b><span>王田交流道・近國道一號</span></div>
+    </div>
+    <div class="foot">
+      <b>資料日期</b>　2026-06-27（115 年 6 月）　｜　<b>提報</b>　大統益股份有限公司・轉呈統一企業<br>
+      <b>專案窗口</b>　張現傑　業務總監 ｜ TEL 04-23803560 ｜ 臺中市南屯區益豐路四段 91 號
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- ===== BLUF ===== -->
+  <div class="bluf" id="bluf">
+    <h2>近況重點摘要</h2>
+    <div class="row"><div class="ic">1</div><div><b>整廠出售一直是賣方的第一選擇，部分出售只是備案。</b>本案在市場上已釋出約三、四年，歷年來持續有買方評估；惟因洽談條件未能相互滿足（並非單純價格因素），加上 114 年之前董事會對出售方向尚未形成共識，整廠未能順利推進，方案才逐步退為部分出售（2,383→1,300 坪）、售價也一路下調（乙工 31→30 萬）。如今整廠買方態度明確齊聚，賣方<b>回到第一選擇</b>、傾向「只整廠出售」（7,866 坪），<span class="d">單獨評估 2,383 坪的空間明顯收窄</span>。</div></div>
+    <div class="row"><div class="ic">2</div><div><b>整廠需求是真實且加速的：近期共有四組買方，其中兩組專為全廠而來。</b>兩組 7,866 坪整廠買方分別於 <span class="g">5 月下旬、6 月下旬</span>出現——短短一個月內接連進場，正是推動股東轉向「只賣整廠」的關鍵。</div></div>
+    <div class="row"><div class="ic">3</div><div><b>但在條件相同下，興國目前仍傾向賣給統一／大統益。</b>這是前期溝通透明與總經理親訪累積的信任，是價格之外、難以被新買方複製的優勢；惟隨整廠買方增加，物件已進入最後成熟期，近期應該即將售出。</div></div>
+    <div class="row"><div class="ic">4</div><div><b>因此提供建議：若統一集團長期仍有此類產業用地需求，值得在目前優勢基礎上優先評估「整廠購置」（方案二・乙工 27 萬／坪、估約 19.7 億）。</b>本案已進入<b>最後成熟成交階段</b>；以目前供給與行情看，台中近期新推出的優質物件單價幾乎已不見 30 萬以下，能以 27 萬取得本廠短期雖非便宜，但數年後要再遇相同價格與條件的機會恐怕相當低。若最終確定不承接整廠，再回頭溝通方案一（2,383 坪・乙工 27.5 萬，估約 6.0 億）。</div></div>
+  </div>
+
+  <!-- ===== Section 01 ===== -->
+  <div class="section" id="s01">
+    <h2><span class="n">01</span>賣方意願的演變 — 三、四年來的脈絡與近期轉折</h2>
+    <p class="lead">本案在市場上釋出出售訊息已約<b>三、四年</b>。<b>整廠出售一直是賣方的第一選擇，部分出售（2,383 坪）是整廠方向未能順利推進下、退而求其次的備案</b>。理解這段歷程，有助於判讀賣方此刻的心態——如今整廠買方齊聚，賣方正回到它原本的第一選擇。</p>
+    <div class="timeline">
+      <div class="tl">
+        <div class="d">約 3~4 年前起</div>
+        <b>開始釋出出售訊息</b>
+        <p>初期僅<b>部分董事</b>有意願出售，董事會對出售方向尚未形成共識。歷年來持續有買方評估，惟洽談條件未能相互滿足（並非單純價格因素），銷售進展有限。</p>
+      </div>
+      <div class="tl">
+        <div class="d">114 年 3 月 7 日</div>
+        <b>董事會正式決議「先出售其中 2,383 坪」</b>
+        <p>董事會內部歷經溝通後，達成先行出售部分土地之共識（備案），整廠出售仍保留為首選意願。當時已有買方，惟因洽談條件未能相互滿足，最後未順利成交。</p>
+      </div>
+      <div class="tl">
+        <div class="d">114 年第四季</div>
+        <b>乙工單價由 31 萬下修至 30 萬</b>
+        <p>針對乙種工業區，售價由每坪 31 萬調整為 30 萬，反映前期去化不易、賣方持續釋出彈性。</p>
+      </div>
+      <div class="tl">
+        <div class="d">115 年初</div>
+        <b>出售規模一度再向下評估</b>
+        <p>方案從整廠、2,383 坪，甚至評估更小單位，例如黑松提案的 1,300 坪。</p>
+      </div>
+      <div class="tl">
+        <div class="d">114 年底起</div>
+        <b>整廠買方開始陸續出現</b>
+        <p>市場上出現態度明確、專為整廠而來的買方，整廠洽談條件開始趨於成熟。</p>
+      </div>
+      <div class="tl">
+        <div class="d">115 年 4–5 月</div>
+        <b>大統益有意購置 2,383 坪</b>
+        <p>進入實質洽談並進一步出價，是目前進度最深、屋主具偏好的買方。</p>
+      </div>
+      <div class="tl now">
+        <div class="d">115 年 5 月下旬 與 6 月下旬</div>
+        <b>接連出現明確要購置整廠的買方 → 賣方決策猶豫</b>
+        <p>大統益洽談期間，兩組明確要購整廠的買方接連進場，<b>導致興國決策猶豫</b>，股東轉而傾向只賣整廠。</p>
+      </div>
+    </div>
+    <div class="note"><b>顧問觀察（重要脈絡）：</b>整廠出售一直是賣方的第一選擇；過去三、四年間，雖持續有買方評估，但洽談條件未能相互滿足（並非純粹價格因素），加上 114 年之前董事會對出售方向曾有分歧，整廠未能順利推進，方案才一路退縮（→2,383→1,300 坪）、價格也隨之調整（乙工 31→30 萬）。如今整廠買方態度明確且齊聚，賣方回到它原本最想要的賣法——這說明賣方的整廠意願有其根基、並非一時起意。對統一而言，這帶出兩個訊息：<b>①</b> 整廠需求此刻確實是真實的；<b>②</b> 本案歷經多年醞釀，目前已進入<b>最後成熟成交階段</b>，賣方雖在多組整廠買方間仍會權衡，而既有的信任關係正是此刻統一的相對優勢——是釐清意願、把握條件的時機。</div>
+  </div>
+
+  <!-- ===== Section 02 ===== -->
+  <div class="section" id="s02">
+    <h2><span class="n">02</span>近期四組買方 — 整廠需求是真實的</h2>
+    <p class="lead">客觀整理目前桌上的四組買方與其狀態，協助 貴公司掌握全貌與自身相對位置。</p>
+    <div class="tbl-wrap">
+      <table class="t">
+        <thead><tr><th>買方</th><th class="num">訴求面積</th><th>出現時間</th><th>目前狀態</th></tr></thead>
+        <tbody>
+          <tr class="dim"><td>① 黑松</td><td class="num">1,300 → 1,600 坪</td><td>—</td><td>因誤發重訊事件，<b>屋主已不再接受其提案</b><span class="tag tag-out" style="margin-left:6px;">已出局</span></td></tr>
+          <tr class="hl"><td>② 大統益（本案）</td><td class="num">2,383 坪</td><td>洽談中</td><td>進度最深、屋主具明顯偏好<span class="tag tag-our" style="margin-left:6px;">屋主傾向</span></td></tr>
+          <tr><td>③ 全廠買方 A</td><td class="num">7,866 坪</td><td>5 月下旬出現</td><td>專為整廠而來<span class="tag tag-full" style="margin-left:6px;">整廠</span></td></tr>
+          <tr><td>④ 全廠買方 B</td><td class="num">7,866 坪</td><td>6 月下旬出現</td><td>專為整廠而來<span class="tag tag-full" style="margin-left:6px;">整廠</span></td></tr>
+        </tbody>
+      </table>
+      <p class="cap">＊整廠買方自 114 年底起陸續浮現，而在大統益洽談期間（115 年 5 月下旬、6 月下旬），短短一個月內又接連出現兩組明確的整廠買方（③④），是賣方股東轉向「只賣整廠」的直接推力。換言之，2,383 坪部分購置的競爭環境已改變——市場對「整筆整廠」的需求，明顯強過對「切割部分」的需求。</p>
+    </div>
+    <div class="note"><b>對大統益的意涵：</b>在四組買方中，大統益是<b>唯一同時具備「進度最深」與「屋主偏好」的買方</b>。但這份領先建立在 2,383 坪的訴求上；當賣方已轉向整廠，若能將評估範圍對齊到整廠，等於把「屋主偏好」這項既有優勢，接到屋主現在最想要的方案上，競爭位置會更穩固。</div>
+  </div>
+
+  <!-- ===== Section 03 ===== -->
+  <div class="section" id="s03">
+    <h2><span class="n">03</span>為何屋主仍傾向統一／大統益 — 良機尚在，但窗口正在收窄</h2>
+    <p class="lead">即使整廠買方陸續進場，在<b>條件相同</b>的情況下，興國目前仍傾向賣給統一／大統益。原因並非價格，而是過程中累積的信任。</p>
+    <div class="trust">
+      <div class="ti"><div class="k">A</div><div><b>兩組整廠買方的背景，屋主目前掌握程度有限：</b>第一組（6月上旬）由仲介方代理洽談，雖已出具出價意願與斡旋，但買方公司身份至今尚未正式揭露；第二組（6月下旬）傳出已直接向建築師諮詢廠區增高可行性，行動積極，但正式互動資訊仍有限。對比下，大統益公司背景清晰、溝通過程透明，是截然不同的信任基礎。</div></div>
+      <div class="ti"><div class="k">B</div><div><b>總經理親自到訪、坦誠說明：</b>大統益總經理曾親自拜訪，並清楚說明無法先行出具斡旋的原因，態度獲得屋主正面評價。</div></div>
+      <div class="ti"><div class="k">C</div><div><b>股東樸實傳統、重視誠意：</b>興國股東較為樸實傳統，對買方公司的誠意與信任感相當重視，這正是統一／大統益的相對優勢。</div></div>
+      <div class="ti"><div class="k">D</div><div><b>對大統益印象較佳：</b>綜合過程互動，屋主對大統益印象較佳，目前也較屬意售予統一／大統益。</div></div>
+    </div>
+    <div class="note"><b>顧問觀察（關於時機）：</b>在金額相近的多方競逐中，屋主的「信任傾向」往往是決定花落誰家的關鍵——它買不到、也難以被新買方在短時間內複製。但這份偏好建立在「<b>條件相同</b>」的前提上：當賣方已轉向整廠、而統一仍只談部分購置，這個前提就會逐漸不成立。<b>目前『興國在條件相同下傾向賣給統一／大統益』的良機，正隨整廠買方增加而逐步收窄。</b>是否把握、如何把握，保留予 貴公司決策。</div>
+  </div>
+
+  <!-- ===== Section 04 ===== -->
+  <div class="section" id="s04">
+    <h2><span class="n">04</span>整廠值得評估的支撐 — 市場需求、行情與區位</h2>
+    <p class="lead">整廠買方的出現並非偶然。延伸查閱近期公開資訊，<b>中部與全台對「整廠級工業資產」的需求正處於結構性升溫</b>，這也從側面印證本標的本身受市場認可的價值。</p>
+    <div class="tbl-wrap">
+      <table class="t">
+        <thead><tr><th>2026 年初・上市櫃廠商購置整廠案例（公開資訊）</th><th class="num">金額</th><th class="num">面積</th><th>區位</th></tr></thead>
+        <tbody>
+          <tr><td>台光電 向遠東新世紀購置廠房</td><td class="num">約 27.8 億</td><td class="num">建物逾 10,185 坪</td><td>桃園觀音產業園區</td></tr>
+          <tr><td>力成科技 購置廠房</td><td class="num">約 17.8 億</td><td class="num">6,117 坪</td><td>新竹產業園區</td></tr>
+          <tr><td>巧新科技 購置廠房</td><td class="num">約 12.3 億</td><td class="num">5,358 坪</td><td>嘉義大埔美園區</td></tr>
+        </tbody>
+      </table>
+      <p class="cap">＊資料來源：產業不動產公開新聞（2026/02）。多家上市櫃公司以十億元級資金購置整廠級資產，反映企業對「廠房自有化、產能在地化」的剛性需求。</p>
+    </div>
+    <div class="kpi-grid" style="margin-top:14px;">
+      <div class="kpi"><div class="l">工業地產買方需求 第 2 名</div><div class="v">食品製造</div><div class="h">僅次倉儲物流（與統一集團本業相關）</div></div>
+      <div class="kpi up"><div class="l">同類土地 四年中位走勢</div><div class="v">+42<small>%</small></div><div class="h">13.0→18.5 萬/坪・約年增 9%</div></div>
+      <div class="kpi"><div class="l">五年台中乙工＋丁建 ≥500 坪成交</div><div class="v">≈194<small>筆</small></div><div class="h">逐年量縮 67→9・稀缺</div></div>
+      <div class="kpi"><div class="l">2025 上半年中位</div><div class="v">19.2<small>萬/坪</small></div><div class="h">同類・近年新高</div></div>
+    </div>
+    <p class="cap" style="margin-top:8px;">＊行情數據摘自本團隊另製《台中工業可用地（乙工＋丁建）數據佐證簡報》（內政部實登自建分析）；完整圖表與方法詳該份報告。標的開價 30 萬/坪（乙工淨地約 33 萬）落於近年同類成交上緣，近年台中乙工已有 34–46 萬/坪成交。</p>
+
+    <p class="lead" style="margin-top:18px;">本標的同時兼具「<b>大面積</b>」與「<b>優質區位</b>」，兩者通常難以兼得——大坪數多需以規模折讓換取，本案卻以區位條件支撐其價值定位：</p>
+    <div class="adv">
+      <div class="a"><b>正臨 30 米大馬路（沙田路）</b><span>板車可直達，物流運輸效率高；面寬條件對整廠規劃極為有利。</span></div>
+      <div class="a"><b>中部稀有大面積整筆整廠</b><span>乙工淨地約 7,140 坪、整筆可整體規劃，市場釋出稀少。</span></div>
+      <div class="a"><b>距交流道僅約 3 公里</b><span>近王田、快速聯外國道 1 號，北上南下便捷。</span></div>
+      <div class="a"><b>地形方正平坦・無重大潛勢</b><span>規劃利用彈性高；災害潛勢檢核 11／12 項無潛勢。</span></div>
+    </div>
+
+    <h3 style="color:var(--forest);font-size:16px;margin:22px 0 10px;">區位利多即將兌現 — 大肚和美跨河橋</h3>
+    <div class="bridge">
+      <div class="bt">
+        <b>中部最大規模跨河橋梁，連接台中大肚與彰化和美。</b>
+        <p>橋梁自大肚區跨越烏溪、南接彰化和美，鄰近國道 1 號、國道 3 號及和美交流道。通車後兩地通勤由原本繞行逾 30 分鐘，縮短至約 2–3 分鐘，把大肚與彰濱、和美工業聚落更緊密地串連起來。對位於大肚的本標的而言，是可預期的<b>區位加值</b>。</p>
+      </div>
+      <div class="bk">
+        <div class="x"><div class="n">32 億</div><div class="l">工程總經費</div></div>
+        <div class="x"><div class="n">1,690 m</div><div class="l">橋全長・雙向四車道</div></div>
+        <div class="x"><div class="n">82%</div><div class="l">目前工程進度</div></div>
+        <div class="x"><div class="n">2026/10</div><div class="l">預計通車（115 年底）</div></div>
+      </div>
+    </div>
+    <p class="cap">＊資料來源：彰化縣／臺中市政府工程資訊與公開新聞。通車時程以官方公告為準；上述為協助評估之背景資訊，非保證未來價格表現。</p>
+
+    <div class="note"><b>關於價格與時間的觀察：</b>觀察台中區域近期新推出的物件，優質工業用地單價幾乎已不見 30 萬以下；本案整廠回價乙工 <b>27 萬／坪</b>，相較之下更顯難得。短期看 27 萬或許不算便宜，但放在三年的時間尺度上——在供給遞減、行情走升、區位利多兌現的方向下——要再以相同價格取得「大面積＋緊鄰交流道＋30 米臨路」的同等物件，機會恐怕相當低。此為趨勢觀察、非價格保證，提供 貴公司評估。</div>
+  </div>
+
+  <!-- ===== Section 05 ===== -->
+  <div class="section" id="s05">
+    <h2><span class="n">05</span>兩個方案與建議路徑 — 決策保留予 貴公司</h2>
+
+    <div class="reco">
+      <h3>建議：優先評估「整廠購置」<span class="badge2">方案二</span></h3>
+      <p>若統一集團長期仍有此類產業用地需求，本案值得在目前優勢基礎上優先評估整廠。理由是整廠評估同時對齊了四件事：<b>①</b> 回到賣方一貫的第一選擇（部分出售本是備案）；<b>②</b> 股東會通過機率相對最高；<b>③</b> 延續「屋主傾向統一／大統益」的既有優勢；<b>④</b> 一次取得完整基地，利於長期整體規劃與產能布局。本案歷經三、四年醞釀，目前已進入<b>最後成熟成交階段</b>，把現有領先位置接到賣方意願上，是此刻最直接的做法。</p>
+    </div>
+
+    <div class="paths">
+      <div class="path a">
+        <h4>方案二・整廠購置 7,866 坪</h4>
+        <div class="tagline">建議優先評估</div>
+        <ul>
+          <li>回到賣方一貫的第一選擇，股東端通過機率相對高。</li>
+          <li>延續屋主對統一／大統益的偏好與信任。</li>
+          <li>一次到位、可整體規劃，避免日後切割受限。</li>
+        </ul>
+        <div class="pr">乙工 <b>27.0 萬</b>／坪・道路及農地 5.8 萬／坪<br>估算總價約 <b>19.7 億</b>元</div>
+      </div>
+      <div class="path b">
+        <h4>方案一・部分購置 2,383 坪</h4>
+        <div class="tagline">退而求其次（如統一確定不承接整廠）</div>
+        <ul>
+          <li>大統益前已出價乙工 26.9 萬，屋主回價 27.5 萬。</li>
+          <li>如可接受 27.5 萬／坪，此案仍有機會優先推進。</li>
+          <li>惟賣方已轉向整廠，此方案的可行空間正收窄。</li>
+        </ul>
+        <div class="pr">乙工 <b>27.5 萬</b>／坪・道路及農地 5.8 萬／坪<br>估算總價約 <b>6.0 億</b>元</div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap" style="margin-top:16px;">
+      <table class="t">
+        <thead><tr><th>方案價格對照</th><th class="num">乙種工業區（萬/坪）</th><th class="num">道路及農地（萬/坪）</th><th class="num">面積（坪）</th><th class="num">估算總價</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>方案二・整廠（建議優先）</td><td class="num">27.0</td><td class="num">5.8</td><td class="num">7,866</td><td class="num">約 19.7 億</td></tr>
+          <tr><td>方案一・部分購置</td><td class="num">27.5</td><td class="num">5.8</td><td class="num">2,383</td><td class="num">約 6.0 億</td></tr>
+        </tbody>
+      </table>
+      <p class="cap">＊上列價格為興國目前回覆之條件；總價為依各分區面積之估算（以實測面積、最終議定條件及屋主股東會／董事會決議為準）。整廠乙工 27 萬之定位，較原開價 30 萬／坪已有調整空間。</p>
+    </div>
+
+    <div class="note"><b>關於時間點：</b>本案已進入最後成熟成交階段——賣方意願明確（回到整廠）、整廠買方齊聚、價格收斂。當「整廠買方增加、行情走升、區位利多兌現、屋主仍具偏好」同時存在，目前的價格與議價條件相對不易再向下。這並非斷言價格走向，而是提醒——若評估後確有需求，<b>越早與母公司形成共識，越能在屋主仍具偏好時把握較順暢的條件</b>；最終仍取決於 貴公司的整體策略與個案議價。</div>
+
+    <div class="risk" style="margin-top:16px;">
+      <h3>ℹ 盡職調查提醒（中立揭露，協助完整評估）</h3>
+      <ul>
+        <li>價格與條件以屋主股東會／董事會最終決議為準；本說明為截至近日之溝通狀態整理，仍有變動可能。</li>
+        <li>兩組整廠買方目前背景揭露有限，後續進度宜持續確認；賣方意願亦可能再調整。</li>
+        <li>既有廠房使照為 66／74 年，整廠評估宜納入結構、是否拆除重建及成本；部分套繪、法定空地分割與山坡地劃出作業仍辦理中。</li>
+        <li>單價、行情與通車時程等屬背景參考；最終決策宜結合現勘、產權查核與專業諮詢綜合判斷。</li>
+        <li>本團隊立場為協助雙方資訊對接與交易結構穩健，不替代 貴公司之獨立判斷，亦不就價格走向作任何保證。</li>
+      </ul>
+    </div>
+    <div class="method">
+      <b>關聯文件：</b>本簡報為「現況更新與決策建議」之主簡報，請搭配以下兩份附件一併參閱：<br>
+      ① <a href="大肚大面積工業用地成交個案分析(全家・全聯).html" class="linkref">《大肚大面積工業用地成交個案分析（全家・全聯）》</a>——大型整街廓成交錨點、漲幅階梯與基地條件對比；<br>
+      ② <a href="興國橡膠整廠物件全台對標分析.html" class="linkref">《興國橡膠整廠物件全台對標分析》</a>——內政部實登全台對標個案比對。兩份文件相互參照——本份著重洽談現況與決策脈絡，附件著重市場數據佐證。
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <b>瑞禾不動產經紀股份有限公司</b>　｜　工業不動產專業顧問　｜　本簡報為顧問觀點與現況整理，提供決策參考，不構成投資建議。
+  <span class="s">專案窗口　張現傑　業務總監 ｜ TEL 04-23803560 ｜ 0953-909777 ｜ 臺中市南屯區益豐路四段 91 號</span>
+  <span class="s">價格與條件以屋主股東會／董事會最終決議為準，最終取捨保留予 貴公司判斷。</span>
+</footer>
+
+</body></html>

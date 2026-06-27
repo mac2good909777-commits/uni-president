@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大肚乙工・興國橡膠廠地行情評估｜瑞禾開發</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background: #F5F3EE; color: #1F2A1F; line-height: 1.7; -webkit-font-smoothing: antialiased;
+  padding-top: 54px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+/* ===== TopNav ===== */
+.topnav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(43,89,55,.96);backdrop-filter:blur(6px);
+  display:flex;align-items:center;gap:6px;padding:10px 22px;flex-wrap:wrap;
+  box-shadow:0 2px 12px rgba(0,0,0,.25);
+}
+.topnav .brand{display:flex;align-items:center;gap:10px;margin-right:auto;}
+.topnav .brand img{height:34px;background:#fff;border-radius:6px;padding:2px;}
+.topnav .brand b{color:#fff;font-size:14px;letter-spacing:1px;}
+.topnav .brand span{color:#C0A434;font-size:11px;display:block;letter-spacing:2px;}
+.topnav a{color:#e8e8e0;text-decoration:none;font-size:12.5px;padding:6px 11px;border-radius:6px;transition:.2s;white-space:nowrap;}
+.topnav a:hover{background:#C0A434;color:#fff;}
+.topnav a.ext{color:#C0A434;border:1px solid rgba(192,164,52,.4);margin-left:4px;}
+.topnav a.ext:hover{background:rgba(192,164,52,.15);color:#fff;}
+/* ===== Cover ===== */
+.cover{
+  background:
+    radial-gradient(circle at 88% 18%,rgba(192,164,52,.18),transparent 42%),
+    linear-gradient(135deg,#1b3526 0%,#264a33 55%,#1e3d29 100%);
+  color:#fff;max-width:none;padding:120px 24px 70px;position:relative;overflow:hidden;
+}
+.cover .wrap{position:relative;z-index:2;max-width:1180px;margin:0 auto;}
+.cover .rice{position:absolute;right:-40px;top:40px;font-size:380px;color:rgba(255,255,255,.04);z-index:1;line-height:1;font-weight:900;pointer-events:none;}
+.cover .logo-box{display:flex;align-items:center;gap:16px;margin-bottom:34px;}
+.cover .logo-box img{height:80px;background:#fff;border-radius:12px;padding:6px;}
+.cover .logo-box .t b{font-size:18px;letter-spacing:2px;color:#fff;display:block;}
+.cover .logo-box .t span{display:block;color:#C0A434;font-size:12px;letter-spacing:3px;}
+.cover .eng{color:#C0A434;letter-spacing:8px;font-size:15px;font-weight:600;}
+.cover h1{font-size:42px;letter-spacing:3px;margin:14px 0 6px;line-height:1.3;color:#fff;}
+.cover h1 small{display:block;font-size:18px;color:rgba(255,255,255,.72);letter-spacing:2px;margin-top:8px;font-weight:400;}
+.cover .gold-band{height:4px;width:120px;background:#C0A434;margin:22px 0 30px;border-radius:2px;}
+.cover .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;max-width:920px;}
+.cover .kpi{background:rgba(255,255,255,.07);border:1px solid rgba(192,164,52,.35);border-radius:12px;padding:18px 14px;text-align:center;}
+.cover .kpi b{display:block;font-size:30px;color:#fff;line-height:1.1;}
+.cover .kpi b em{font-size:15px;font-style:normal;color:#C0A434;}
+.cover .kpi span{font-size:13px;color:rgba(255,255,255,.70);letter-spacing:1px;}
+.cover .foot{margin-top:40px;color:#cfe0d2;font-size:14px;border-top:1px solid rgba(255,255,255,.15);padding-top:18px;line-height:1.9;}
+.cover .foot b{color:#fff;}
+@media(max-width:820px){
+  .topnav a{font-size:11px;padding:5px 7px;}
+  .topnav .brand span{display:none;}
+  .cover{padding:80px 16px 46px;}
+  .cover h1{font-size:26px;}
+  .cover .kpis{grid-template-columns:1fr 1fr;}
+  .cover .rice{display:none;}
+}
+
+.target-card { background: #fff; border: 2px solid #C0A434; border-radius: 8px; padding: 28px 32px;
+  margin: 28px 0; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+  box-shadow: 0 4px 16px rgba(43,89,55,0.10); }
+.target-card h2 { color: #2B5937; font-size: 20px; margin-bottom: 14px; }
+.target-card .info { font-size: 14.5px; line-height: 2; }
+.target-card .info .lbl { color: #6B7568; display: inline-block; min-width: 90px; }
+.target-card .info .val { color: #1F2A1F; font-weight: 600; }
+.target-card .price-box { text-align: center; background: #E8F5E0; border-radius: 8px; padding: 20px 28px; min-width: 230px; }
+.target-card .price-box .lbl { font-size: 12px; color: #6B7568; }
+.target-card .price-box .ask { font-size: 38px; color: #2B5937; font-weight: 700; line-height: 1; margin: 6px 0; }
+.target-card .price-box .unit { font-size: 15px; color: #4B872F; font-weight: 600; }
+.target-card .price-box .total { font-size: 13px; color: #C0A434; margin-top: 8px; font-weight: 600; }
+
+.verdict { background: linear-gradient(135deg, #E8F5E0 0%, #fff 100%); border-left: 6px solid #C0A434;
+  border-radius: 6px; padding: 26px 30px; margin: 24px 0; }
+.verdict h2 { color: #2B5937; font-size: 19px; margin-bottom: 14px; }
+.verdict p { font-size: 15.5px; color: #2A382A; margin-bottom: 12px; }
+.verdict .num { color: #4B872F; font-weight: 700; }
+.verdict .warn { color: #B85A1A; font-weight: 600; }
+
+.section { margin: 36px 0; }
+.section h2 { font-size: 21px; color: #2B5937; border-left: 5px solid #4B872F;
+  background: linear-gradient(90deg, #E8F5E0 0%, transparent 100%); padding: 10px 14px; margin-bottom: 18px; }
+.section h2 .num { color: #C0A434; margin-right: 10px; font-weight: 700; }
+.section .lead { font-size: 13.5px; color: #6B7568; margin-bottom: 14px; line-height: 1.65; }
+
+/* Ladder */
+.ladder { background: #fff; border: 1px solid #D4CFC0; border-radius: 6px; padding: 24px 28px; }
+.ladder-row { display: grid; grid-template-columns: 230px 80px 1fr 90px; gap: 14px; align-items: center;
+  padding: 12px 0; border-bottom: 1px dashed #EAE6D8; }
+.ladder-row:last-child { border-bottom: 0; }
+.ladder-row .name { font-size: 14px; font-weight: 600; color: #1F2A1F; }
+.ladder-row .name small { display: block; font-size: 11.5px; color: #6B7568; font-weight: 400; margin-top: 2px; }
+.ladder-row .n { font-size: 12px; color: #6B7568; }
+.ladder-row .barbg { background: #EFEDE3; border-radius: 4px; height: 24px; position: relative; overflow: hidden; }
+.ladder-row .barfill { height: 100%; border-radius: 4px; }
+.ladder-row.lo .barfill { background: linear-gradient(90deg, #9CB089, #B7C7A3); }
+.ladder-row.mid .barfill { background: linear-gradient(90deg, #4B872F, #6BA348); }
+.ladder-row.hi .barfill { background: linear-gradient(90deg, #C0A434, #D9BC4A); }
+.ladder-row.target .barfill { background: linear-gradient(90deg, #C0A434, #B85A1A); }
+.ladder-row.proj .barbg { border: 1.5px dashed #B85A1A; background: repeating-linear-gradient(45deg,#FBF3E2,#FBF3E2 6px,#F3E6C8 6px,#F3E6C8 12px); }
+.ladder-row.proj .barfill { background: transparent; }
+.ladder-row .avg { font-size: 15px; color: #2B5937; font-weight: 700; text-align: right; }
+.ladder-row.target .avg { color: #B85A1A; }
+
+/* tables */
+.vs-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 13.5px; background: #fff; border: 1px solid #D4CFC0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07); }
+.vs-table th { padding: 14px 16px; text-align: left; font-weight: 700; font-size: 14px; letter-spacing:.02em; }
+.vs-table th.h0 { background: #52534F; color: #fff; width: 148px; min-width: 120px; }
+.vs-table th.hA { background: #2B5937; color: #fff; border-left: 3px solid #4B872F; }
+.vs-table th.hB { background: #6B4A10; color: #fff; border-left: 3px solid #C0A434; }
+.vs-table td { padding: 12px 16px; border-bottom: 1px solid #EAE6D8; vertical-align: top; line-height: 1.6; overflow-wrap: break-word; word-break: break-word; }
+.vs-table td.k { background: #F0EEE8; font-weight: 600; color: #3A3D38; font-size: 13px; border-right: 1px solid #D4CFC0; }
+.vs-table td:nth-child(2) { background: #F4FAF5; }
+.vs-table td:nth-child(3) { background: #FDF8EE; }
+.vs-table tr:last-child td { border-bottom: 0; }
+.vs-table .big  { font-size: 17px; font-weight: 700; color: #1F4429; }
+.vs-table .bigB { font-size: 17px; font-weight: 700; color: #6B4A10; }
+
+.comp-table { width: 100%; border-collapse: collapse; font-size: 13px; background: #fff; border: 1px solid #D4CFC0; border-radius: 6px; overflow: hidden; }
+.comp-table th { background: #2B5937; color: #fff; padding: 10px; text-align: left; font-weight: 600; }
+.comp-table td { padding: 9px 10px; border-bottom: 1px solid #EAE6D8; }
+.comp-table tr:nth-child(even) { background: #FBFAF5; }
+.comp-table tr.highlight { background: rgba(192,164,52,0.14) !important; font-weight: 600; }
+.comp-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* compute box */
+.calc { background: #fff; border: 1px solid #D4CFC0; border-radius: 8px; padding: 0; overflow: hidden; }
+.calc .row { display: grid; grid-template-columns: 1fr auto; gap: 14px; padding: 16px 24px; border-bottom: 1px solid #EFEDE3; align-items: center; }
+.calc .row:last-child { border-bottom: 0; }
+.calc .row.final { background: linear-gradient(135deg, #2B5937 0%, #4B872F 100%); color: #fff; }
+.calc .row .label { font-size: 14px; }
+.calc .row .label b { color: #2B5937; }
+.calc .row.final .label { font-size: 16px; font-weight: 600; }
+.calc .row .value { font-size: 20px; font-weight: 700; color: #4B872F; white-space: nowrap; }
+.calc .row.final .value { color: #C0A434; font-size: 26px; }
+
+/* adv cards */
+.adv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.adv-card { background: #fff; border: 1px solid #D4CFC0; border-radius: 6px; padding: 20px 24px; position: relative; overflow: hidden; }
+.adv-card::before { content: ""; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #4B872F, #C0A434); }
+.adv-card .icon { font-size: 24px; margin-bottom: 8px; }
+.adv-card h3 { color: #2B5937; font-size: 16px; margin-bottom: 8px; }
+.adv-card p { font-size: 13.5px; color: #2A382A; line-height: 1.7; }
+.adv-card .data { color: #C0A434; font-weight: 700; }
+
+.risk { background: #fff; border: 1px dashed #B85A1A; border-radius: 6px; padding: 18px 22px; margin: 20px 0; font-size: 13.5px; color: #4A382A; }
+.risk h3 { color: #B85A1A; font-size: 15px; margin-bottom: 8px; }
+
+.suggest { background: linear-gradient(135deg, #2B5937 0%, #4B872F 100%); color: #fff; border-radius: 8px; padding: 32px 36px; margin-top: 16px; }
+.suggest h2 { color: #C0A434; font-size: 22px; margin-bottom: 16px; border: none; padding: 0; background: none; }
+.suggest ol { padding-left: 22px; }
+.suggest li { margin-bottom: 12px; font-size: 15px; line-height: 1.75; }
+.suggest li b { color: #C0A434; }
+
+.footer { background: #2B5937; color: #cfe0d2; padding: 26px; margin-top: 40px; text-align: center; font-size: 13px; letter-spacing: .5px; border-top: 3px solid #C0A434; }
+.footer b { color: #fff; }
+.footer .small { font-size: 11.5px; opacity: 0.8; margin-top: 6px; display: block; }
+
+@media (max-width: 820px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 36px 0 32px; } .hero h1 { font-size: 21px; line-height: 1.4; }
+  .hero .sub { font-size: 14px; } .hero .meta { flex-direction: column; gap: 6px; font-size: 12.5px; }
+  .target-card { grid-template-columns: 1fr; gap: 18px; padding: 22px 20px; }
+  .target-card .price-box .ask { font-size: 32px; }
+  .verdict { padding: 20px 18px; } .verdict h2 { font-size: 17px; } .verdict p { font-size: 14px; }
+  .section h2 { font-size: 18px; padding: 8px 12px; }
+  .adv-grid { grid-template-columns: 1fr; }
+  .ladder { padding: 16px 14px; } .ladder-row { grid-template-columns: 1fr; gap: 6px; padding: 12px 0; }
+  .ladder-row .n { display: none; } .ladder-row .avg { text-align: left; }
+  .vs-wrap, .comp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .vs-table, .comp-table { font-size: 11.5px; min-width: 640px; }
+  .calc .row { grid-template-columns: 1fr; gap: 4px; } .calc .row .value { font-size: 18px; }
+  .suggest { padding: 22px 20px; } .suggest li { font-size: 14px; }
+}
+@media print {
+  @page { size: A4 landscape; margin: 10mm; }
+  html, body { background: #F5F3EE !important; color: #1F2A1F !important; font-size: 9pt;
+    -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .wrap, .cover, .footer { width: 1200px !important; max-width: 1200px !important; margin: 0 auto !important; }
+  .topnav { display: none !important; }
+  body { padding-top: 0 !important; }
+  .cover { padding: 24pt 22px 28pt !important; break-inside: avoid; }
+  .cover h1 { font-size: 22pt !important; }
+  .cover .kpis { grid-template-columns: repeat(4,1fr) !important; gap: 8pt !important; }
+  .cover .rice { display: none; }
+  .section, .target-card, .verdict, .ladder, .ladder-row, .adv-card, .risk, .suggest,
+  .calc, .calc .row, table, .comp-table tr, .vs-table tr { break-inside: avoid; page-break-inside: avoid; }
+  h1,h2,h3 { page-break-after: avoid; break-after: avoid; }
+  .vs-wrap, .comp-table-wrap { overflow: visible !important; }
+  .vs-table, .comp-table { min-width: 0 !important; }
+  a { text-decoration: none; color: inherit; }
+  .site-grid, .dist-grid, .ba-grid { break-inside: avoid; }
+}
+
+/* ── Site condition comparison ── */
+.site-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 18px 0; align-items: start; }
+.site-col { background: #fff; border: 1px solid #D4CFC0; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
+.site-winner { border: 2px solid #C0A434; box-shadow: 0 6px 22px rgba(192,164,52,0.22); }
+.site-col-hdr { padding: 13px 16px; font-weight: 700; font-size: 14px; color: #fff; text-align: center; letter-spacing: .02em; }
+.site-col-hdr.green  { background: #2B5937; }
+.site-col-hdr.greenB { background: #6B4A10; }
+.site-col-hdr.gold   { background: linear-gradient(135deg, #C0A434 0%, #B85A1A 100%); font-size: 15px; }
+
+/* 空照圖 — first .site-img-wrap: fixed crop for overview */
+.site-img-wrap { position: relative; }
+.site-img-wrap img { width: 100%; height: 170px; object-fit: cover; display: block; }
+
+/* 地籍圖 — second .site-img-wrap (adjacent sibling): show FULL, no crop */
+.site-img-wrap + .site-img-wrap { border-top: 2px dashed #D4CFC0; background: #F8F5EE; }
+.site-img-wrap + .site-img-wrap img {
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  background: #F8F5EE;
+  padding: 6px;
+}
+
+.img-tag { position: absolute; top: 6px; left: 6px; background: rgba(0,0,0,0.58); color: #fff; font-size: 10px; padding: 2px 8px; border-radius: 3px; font-weight: 600; }
+
+/* Stats — larger, more readable */
+.site-col .stat { padding: 11px 16px; border-top: 1px solid #EDE9DF; font-size: 13px; }
+.site-col .stat .lbl { color: #6B7568; display: block; font-size: 11.5px; margin-bottom: 3px; letter-spacing: .01em; }
+.site-col .stat .val { font-weight: 700; color: #2A382A; font-size: 14.5px; line-height: 1.4; }
+.site-col .stat.winner { background: rgba(192,164,52,0.09); border-left: 3px solid #C0A434; }
+.site-col .stat.winner .val { color: #7B4A00; font-size: 15px; }
+
+.sub-title { font-size: 15px; font-weight: 700; color: #2B5937; margin: 24px 0 10px; border-left: 4px solid #C0A434; padding-left: 10px; }
+.dist-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 0 0 10px; }
+.dist-item { background: #fff; border: 1px solid #D4CFC0; border-radius: 6px; overflow: hidden; }
+.dist-winner { border-color: #C0A434; box-shadow: 0 2px 10px rgba(192,164,52,0.2); }
+.dist-item img { width: 100%; height: 175px; object-fit: cover; display: block; }
+.dist-cap { padding: 11px 14px; font-size: 13px; text-align: center; color: #4A5448; line-height: 1.6; }
+.ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 0 10px; }
+.ba-item { background: #fff; border: 1px solid #D4CFC0; border-radius: 6px; overflow: hidden; }
+.ba-item img { width: 100%; height: 210px; object-fit: cover; display: block; }
+.ba-cap { padding: 11px 14px; font-size: 13px; color: #4A5448; }
+.ba-cap b { color: #2B5937; }
+.site-links { padding: 11px 16px 13px; border-top: 1px solid #EAE6D8; font-size: 12.5px; line-height: 1.85; }
+.site-links .addr { display: block; font-weight: 600; color: #2B5937; }
+.site-links .addr:hover { text-decoration: underline; }
+.site-links a { color: #4B872F; text-decoration: none; }
+.site-links a:hover { text-decoration: underline; }
+.site-links .sv-row { color: #6B7568; margin-top: 2px; }
+.site-col.site-winner .site-links .addr { color: #B85A1A; }
+@media (max-width: 820px) {
+  .site-grid, .dist-grid { grid-template-columns: 1fr; }
+  .ba-grid { grid-template-columns: 1fr; }
+  .site-img-wrap img { height: 200px; }
+  .dist-item img { height: 180px; }
+  .ba-item img { height: 200px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="brand">
+    <img src="logo-瑞禾.png" alt="瑞禾開發">
+    <div><b>瑞禾開發 ｜ 建築・房產整合團隊</b><span>RUEI.HE REAL ESTATE DEVELOPMENT</span></div>
+
+  <a href="興國橡膠廠購置案進度說明與決策建議.html">← 主簡報</a>
+  <a href="興國橡膠整廠物件全台對標分析.html" class="ext">全台對標分析</a>
+</nav>
+
+<section class="cover" id="cover">
+  <div class="rice">禾</div>
+  <div class="wrap">
+    <div class="logo-box">
+      <img src="logo-瑞禾.png" alt="瑞禾開發">
+      <div class="t"><b>瑞禾開發 ｜ 建築・房產整合團隊</b><span>RUEI.HE REAL ESTATE DEVELOPMENT</span></div>
+    </div>
+    <div class="eng">2026　MARKET　ANALYSIS　REPORT</div>
+    <h1>大肚大面積工業用地<br>成交個案分析
+      <small>成交錨點 × 平地乙工漲幅趨勢 ｜ 供 統一集團大統益 評估參考</small>
+    </h1>
+    <div class="gold-band"></div>
+    <div class="kpis">
+      <div class="kpi"><b>7,867<em> 坪</em></b><span>興國橡膠廠地面積</span></div>
+      <div class="kpi"><b>27<em> 萬/坪</em></b><span>標的整廠開價</span></div>
+      <div class="kpi"><b>約21.2<em> 億</em></b><span>試算總地價</span></div>
+      <div class="kpi"><b>2.1<em> km</em></b><span>王田交流道・6 分鐘</span></div>
+    </div>
+    <div class="foot">
+      <b>資料日期</b>　2026-06-27（115 年 6 月）　｜　<b>提報</b>　大統益股份有限公司・轉呈統一企業<br>
+      <b>專案窗口</b>　張現傑　業務總監 ｜ TEL 04-23803560 ｜ 臺中市南屯區益豐路四段 91 號
+    </div>
+
+</section>
+
+<div class="wrap">
+
+
+  <div class="verdict">
+    <h2>三句話結論</h2>
+    <p>📌 <b>大型整街廓乙工幾乎沒有「同級可比價」，只能用指標成交回推。</b>大肚平地乙工 9 年來 ≥1,500 坪的整批成交僅 <span class="num">5 筆</span>，除了全聯、全家兩家品牌企業的整批案，市場上幾乎找不到大塊對標 — 不能用一般小筆行情直接套大塊。</p>
+    <p>📌 <b>全家案：11,163 坪、均價 12.5 萬/坪、總額 14 億。</b>2019 年董事會議價決定，兩家估價師評估 <span class="num">13.4～14.4 億</span>。同期文昌段平地乙工小筆中位約 13 萬，全家整批 11,163 坪卻僅 12.5 萬取得，幾無大塊折讓。</p>
+    <p>📌 <b>平地乙工 2024 年已成交 26.8 萬；當年提早布局的成本，至今已被市場追上。</b>文昌段純地：2015→7 萬、2019 全家 12.5 萬、2024 已成交 <span class="num">26.8 萬</span>（5 年逾兩倍）。順勢推至 2026，平地乙工參考區間約 <span class="num">27～32 萬/坪</span>，興國 27 萬落在<span class="warn">區間下緣</span>，時間漲幅與大塊稀缺差異均尚未另行反映。</p>
+
+
+  <!-- 01 兩筆當時 vs 同期 -->
+  <div class="section">
+    <h2><span class="num">01</span>兩筆指標成交 — 「當時取得價 × 同期行情位置」</h2>
+    <p class="lead">關鍵不是兩家付了多少，而是「在當時，他們的價格落在市場的哪個位置」。答案：都在頂端，且不因大塊而被砍價。</p>
+    <div class="vs-wrap">
+    <table class="vs-table">
+      <tr><th class="h0">項目</th><th class="hA">全家便利商店-大肚物流中心</th><th class="hB">全聯實業-大肚倉儲</th></tr>
+      <tr><td class="k">成交時間</td><td>2019-02</td><td>2021-06</td></tr>
+      <tr><td class="k">規模</td><td class="big">11,163 坪<small>（公司公告整批）</small></td><td class="bigB">大型整批進場<small>（福德段・王田交流道腹地）</small></td></tr>
+      <tr><td class="k">取得單價</td><td class="big">12.5 萬/坪<small>總額 14 億（含拆遷補償）</small></td><td class="bigB">約 15 萬/坪<small>（同期福德段・近交流道行情水準）</small></td></tr>
+      <tr><td class="k">估價師背書</td><td>中華徵信 13.4 億／中信 14.4 億</td><td>—</td></tr>
+      <tr><td class="k">同期・同分區<br>平地乙工行情</td><td>文昌段平地小筆 中位 <b>13.0 萬</b><br>（區間 11.5～13.5）</td><td>福德平地乙工 <b>14.9 萬</b><br>（1180 系列同期）</td></tr>
+      <tr><td class="k">相對位置</td><td><span style="color:#B85A1A;font-weight:700;">同分區頂端、無大塊折讓</span> — 整批 11,163 坪仍以 12.5 萬取得，已逼近同期小筆中位</td><td>周邊山坡乙工僅 4～9 萬，此筆屬<span style="color:#B85A1A;font-weight:700;">區域最高價帶</span></td></tr>
+    </table>
+    </div>
+
+
+  <!-- 02 三標基地條件對比 -->
+  <div class="section">
+    <h2><span class="num">02</span>三標基地條件對比 — 興國橡膠全面優於對標案</h2>
+    <p class="lead">價格之外，基地條件決定開發效益的上限。從基地形狀、臨路條件、上交流道距離三個維度對比，興國橡膠在每一項均具備明顯優勢。</p>
+
+    <div class="site-grid">
+      <div class="site-col">
+        <div class="site-col-hdr green">全家便利商店-大肚物流中心</div>
+        <div class="site-img-wrap">
+          <img src="圖片/空照圖-全家大肚物流中心.png" alt="全家空照圖">
+          <span class="img-tag">空照圖</span>
+        </div>
+        <div class="site-img-wrap">
+          <img src="圖片/地籍圖-全家大肚物流中心.png?v=2" alt="全家地籍圖">
+          <span class="img-tag">地籍圖</span>
+        </div>
+        <div class="stat"><span class="lbl">上交流道（王田）</span><span class="val">7.3 km・約 15 分鐘</span></div>
+        <div class="stat"><span class="lbl">基地形狀</span><span class="val">多筆整合、形狀較複雜</span></div>
+        <div class="stat"><span class="lbl">臨路條件</span><span class="val">萬興路</span></div>
+        <div class="stat"><span class="lbl">臨路面寬</span><span class="val">約 75 m</span></div>
+        <div class="stat"><span class="lbl">門前路寬</span><span class="val">約 15 m</span></div>
+        <div class="site-links">
+          <a class="addr" href="https://maps.app.goo.gl/jfNR87WQ3KP9qNep8" target="_blank">📍 台中市大肚區萬興路60號</a>
+          <div class="sv-row">街景：<a href="https://maps.app.goo.gl/uQE5Ar23VLD3CHiH6" target="_blank">2026年1月</a>・<a href="https://maps.app.goo.gl/iEnGUcKsZrDqrXeS7" target="_blank">2018年2月</a></div>
+        </div>
+      </div>
+
+      <div class="site-col">
+        <div class="site-col-hdr greenB">全聯實業-大肚倉儲</div>
+        <div class="site-img-wrap">
+          <img src="圖片/空照圖-全聯實業沙田路二段.png" alt="全聯空照圖">
+          <span class="img-tag">空照圖</span>
+        </div>
+        <div class="site-img-wrap">
+          <img src="圖片/地籍圖-全聯實業沙田路二段.png?v=2" alt="全聯地籍圖">
+          <span class="img-tag">地籍圖</span>
+        </div>
+        <div class="stat"><span class="lbl">上交流道（王田）</span><span class="val">3.6 km・約 8 分鐘</span></div>
+        <div class="stat"><span class="lbl">基地形狀</span><span class="val">方正尚可、局部不規則</span></div>
+        <div class="stat"><span class="lbl">臨路條件</span><span class="val">沙田路二段</span></div>
+        <div class="stat"><span class="lbl">臨路面寬</span><span class="val">約 50 m</span></div>
+        <div class="stat"><span class="lbl">門前路寬</span><span class="val">約 30 m</span></div>
+        <div class="site-links">
+          <a class="addr" href="https://maps.app.goo.gl/tUGJviCW3wa5MGZT6" target="_blank">📍 台中市大肚區沙田路二段26號</a>
+          <div class="sv-row">街景：<a href="https://maps.app.goo.gl/uQE5Ar23VLD3CHiH6" target="_blank">2026年1月</a>・<a href="https://maps.app.goo.gl/Wy99CT1vMiu7DtLG6" target="_blank">2011年3月</a></div>
+        </div>
+      </div>
+
+      <div class="site-col site-winner">
+        <div class="site-col-hdr gold">★ 興國橡膠・本案</div>
+        <div class="site-img-wrap">
+          <img src="圖片/空照圖-興國橡膠.png" alt="興國橡膠空照圖">
+          <span class="img-tag">空照圖</span>
+        </div>
+        <div class="site-img-wrap">
+          <img src="圖片/地籍圖-興國橡膠.png?v=2" alt="興國橡膠地籍圖">
+          <span class="img-tag">地籍圖</span>
+        </div>
+        <div class="stat winner"><span class="lbl">上交流道（王田）</span><span class="val">約 2.1 km・6 分鐘 ★</span></div>
+        <div class="stat winner"><span class="lbl">基地形狀</span><span class="val">近矩形規整、開發效率最高 ★</span></div>
+        <div class="stat winner"><span class="lbl">臨路條件</span><span class="val">沙田路一段</span></div>
+        <div class="stat winner"><span class="lbl">臨路面寬</span><span class="val">約 180 m ★（全家 2.4倍、全聯 3.6倍）</span></div>
+        <div class="stat winner"><span class="lbl">門前路寬</span><span class="val">約 30 m ★（全家 2倍）</span></div>
+        <div class="site-links">
+          <a class="addr" href="https://maps.app.goo.gl/jfNR87WQ3KP9qNep8" target="_blank">📍 台中市大肚區沙田路一段596號</a>
+          <div class="sv-row">街景：<a href="https://maps.app.goo.gl/s5YrPC8EJKUScaH19" target="_blank">2026年1月</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-title">上交流道距離比較</div>
+    <div class="dist-grid">
+      <div class="dist-item">
+        <img src="圖片/上交流道距離圖-全家大肚物流中心.png" alt="全家距離圖">
+        <div class="dist-cap">全家便利商店-大肚物流中心 → 王田交流道<br><b>7.3 km・15 分鐘</b></div>
+      </div>
+      <div class="dist-item">
+        <img src="圖片/上交流道距離圖-全聯實業沙田路二段.png" alt="全聯距離圖">
+        <div class="dist-cap">全聯實業-大肚倉儲 → 王田交流道<br><b>3.6 km・8 分鐘</b></div>
+      </div>
+      <div class="dist-item dist-winner">
+        <img src="圖片/上交流道距離圖-興國橡膠.png" alt="興國距離圖">
+        <div class="dist-cap">興國橡膠 → 王田交流道<br><b style="color:#B85A1A;">約 2.1 km・6 分鐘 ★</b></div>
+      </div>
+    </div>
+
+    <div class="sub-title">品牌企業布局軌跡 — 全家便利商店-大肚物流中心 2018 → 2026</div>
+    <div class="ba-grid">
+      <div class="ba-item">
+        <img src="圖片/街景-全家大肚物流中心2018年2月.png" alt="全家2018">
+        <div class="ba-cap"><b>2018 年 2 月</b> — 整批取得前（空地 / 舊廠狀態）</div>
+      </div>
+      <div class="ba-item">
+        <img src="圖片/街景-全家大肚物流中心2026年1月.png" alt="全家2026">
+        <div class="ba-cap"><b>2026 年 1 月</b> — 竣工後（現代多層物流中心）</div>
+      </div>
+    </div>
+    <p class="lead">▲ 全家 2019 年以 12.5 萬/坪整批取得時，現場仍為工業舊廠狀態；歷經規劃開發，2026 年已完成現代多層物流中心。興國橡膠目前基地狀態相近，且交流道距離更具優勢，值得以同等框架評估開發潛力。</p>
+
+    <div class="sub-title">全聯實業-大肚倉儲 周邊現況</div>
+    <div class="ba-grid">
+      <div class="ba-item">
+        <img src="圖片/街景-全聯實業沙田路二段2011年3月.png" alt="全聯2011">
+        <div class="ba-cap"><b>2011 年 3 月</b></div>
+      </div>
+      <div class="ba-item">
+        <img src="圖片/街景-全聯實業沙田路二段2014年10月.png" alt="全聯2014">
+        <div class="ba-cap"><b>2014 年 10 月</b></div>
+      </div>
+    </div>
+
+
+  <!-- 03 漲幅階梯 -->
+  <div class="section">
+    <h2><span class="num">03</span>平地乙工漲幅階梯 — 全為「已成交」實價，非預估</h2>
+    <p class="lead">以文昌段平地乙工純地為一致基準。價格自 2015 年起一路墊高，2024 年已成交至 26.8 萬/坪。</p>
+    <div class="ladder">
+      <div class="ladder-row lo">
+        <div class="name">2015・文昌段平地乙工<small>含 2,038／2,354 坪大塊同價</small></div>
+        <div class="n">基期</div>
+        <div class="barbg"><div class="barfill" style="width:21%;"></div></div>
+        <div class="avg">7.1 萬</div>
+      </div>
+      <div class="ladder-row mid">
+        <div class="name">2019・全家整批進場（官方）<small>11,163 坪・均價 12.5 萬・總額 14 億</small></div>
+        <div class="n">主錨</div>
+        <div class="barbg"><div class="barfill" style="width:37%;"></div></div>
+        <div class="avg">12.5 萬</div>
+      </div>
+      <div class="ladder-row mid">
+        <div class="name">2021・全聯實業-大肚倉儲進場<small>福德段・王田交流道腹地</small></div>
+        <div class="n">參考</div>
+        <div class="barbg"><div class="barfill" style="width:44%;opacity:0.5;"></div></div>
+        <div class="avg">~15 萬</div>
+      </div>
+      <div class="ladder-row hi">
+        <div class="name">2024・文昌段純地最新成交<small>592 坪・小筆已達此價</small></div>
+        <div class="n">最新實價</div>
+        <div class="barbg"><div class="barfill" style="width:79%;"></div></div>
+        <div class="avg">26.8 萬</div>
+      </div>
+      <div class="ladder-row target">
+        <div class="name">★ 興國橡膠 開價（2026）<small>大型整街廓・近交流道</small></div>
+        <div class="n">本案</div>
+        <div class="barbg"><div class="barfill" style="width:79%;"></div></div>
+        <div class="avg">27.0 萬</div>
+      </div>
+      <div class="ladder-row proj">
+        <div class="name">2026・平地乙工推估合理帶<small>順勢推導</small></div>
+        <div class="n">推估</div>
+        <div class="barbg"><div class="barfill" style="width:0;"></div></div>
+        <div class="avg">27～32 萬</div>
+      </div>
+      <p style="font-size:12px;color:#6B7568;margin-top:14px;line-height:1.6;">
+        ＊2015→2019 年化漲幅約 16%，2019→2024 約 14%。即使 2024→2026 保守僅取每年 5～8%，平地乙工亦站上 27～32 萬/坪。興國 27 萬落在推估區間下緣。
+      </p>
+    </div>
+
+
+  <!-- 03 推導計算 -->
+  <div class="section">
+    <h2><span class="num">04</span>推導到 2026 — 興國 27 萬怎麼來的</h2>
+    <div class="calc">
+      <div class="row"><div class="label">起點：<b>全家 2019 整批取得</b>（公司公告均價）</div><div class="value">12.5 萬/坪</div></div>
+      <div class="row"><div class="label">＋ 平地乙工 2019→2024 已成交漲幅（文昌段純地 26.8 萬）</div><div class="value">×2.14 ≈ 26.8 萬</div></div>
+      <div class="row"><div class="label">＋ 2024→2026 順勢（保守 5～8%/年）</div><div class="value">→ 27～31 萬</div></div>
+      <div class="row"><div class="label">＋ 大型整街廓稀缺溢價（依全聯/全家「大塊不折讓」實證）</div><div class="value">不折價</div></div>
+      <div class="row final"><div class="label">2026 大型整街廓乙工 合理價 ⇒ 興國 27 萬</div><div class="value">區間下緣・合理</div></div>
+    </div>
+    <p style="font-size:12.5px;color:#6B7568;margin-top:12px;line-height:1.6;">
+      換句話說：以 2024 年文昌段「小筆」已成交的 26.8 萬為錨，興國作為更稀缺的大型整街廓，2026 年開價 27 萬幾乎等同兩年前的小筆價 — 並未對大塊與時間漲幅另行加價。
+    </p>
+
+
+  <!-- 04 稀缺性實證 -->
+  <div class="section">
+    <h2><span class="num">05</span>大型整街廓稀缺性 — 9 年僅 5 筆 ≥1,500 坪成交</h2>
+    <div class="comp-table-wrap"><table class="comp-table">
+      <thead><tr><th>年</th><th>地段</th><th class="num">坪數</th><th class="num">單價(萬/坪)</th><th>買方／性質</th></tr></thead>
+      <tbody>
+        <tr><td>2015</td><td>文昌段</td><td class="num">2,038</td><td class="num">7.1</td><td>中間商整合</td></tr>
+        <tr><td>2015</td><td>文昌段</td><td class="num">2,354</td><td class="num">7.1</td><td>中間商整合</td></tr>
+        <tr class="highlight"><td>2019</td><td>文昌段</td><td class="num">4,405</td><td class="num">11.5</td><td>全家（24 筆大塊）</td></tr>
+        <tr class="highlight"><td>2019</td><td>文昌段</td><td class="num">2,038</td><td class="num">13.2</td><td>全家</td></tr>
+        <tr class="highlight"><td>2019</td><td>文昌段</td><td class="num">1,996</td><td class="num">13.5</td><td>全家（本案地圖顯示筆）</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:12.5px;color:#6B7568;margin-top:10px;">＊全家案公司公告整批為 <b>11,163 坪・均價 12.5 萬・總額 14 億</b>（上表為其中可查的大塊實登明細）。大肚平地乙工 ≥1,500 坪純地成交 9 年僅此 5 筆，2019 後再無大塊釋出 — 興國這種規模一旦錯過，市場幾無替代品。金色為品牌企業整批案。</p>
+
+
+  <!-- 05 核心論點 -->
+  <div class="section">
+    <h2><span class="num">06</span>對標重點</h2>
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="icon">🏷️</div>
+        <h3>大肚區行情價失真</h3>
+        <p>大肚區實價登錄物件大多為斜坡上小面積丁種建築用地，多為 300～600 坪小筆，大型整街廓的稀缺性使其<span class="data">不該折價、反而溢價</span>。</p>
+      </div>
+      <div class="adv-card">
+        <div class="icon">🛒</div>
+        <h3>品牌企業已驗證此價帶</h3>
+        <p>全聯、全家分別於 2019、2021 年以 <span class="data">12.5～15 萬</span> 整批進場；2024 年文昌段同分區已成交 26.8 萬，提早布局的成本至今已被市場追上。</p>
+      </div>
+      <div class="adv-card">
+        <div class="icon">📈</div>
+        <h3>漲幅是「已成交」非預期</h3>
+        <p>文昌段純地 2024 已實際成交 <span class="data">26.8 萬</span>。27 萬不是賣方喊價，而是兩年前小筆就已到位的水準。</p>
+      </div>
+      <div class="adv-card">
+        <div class="icon">⏳</div>
+        <h3>替代品幾乎不存在</h3>
+        <p>2019 後大肚再無 ≥1,500 坪平地乙工整批釋出。錯過興國，下一個大型基地<span class="data">不知何時出現</span>。</p>
+      </div>
+      <div class="adv-card" style="grid-column: 1/-1;">
+        <div class="icon">📍</div>
+        <h3>興國橡膠的基地條件全面優於兩個對標案</h3>
+        <p>距王田交流道（國道一號）<span class="data">約 2.1km</span>（全家 7.3km、全聯 3.6km）；臨路面寬 <span class="data">約 180m</span>（全家 75m、全聯 50m）；門前道路寬 <span class="data">30m</span>（全家 15m、全聯 20m）。三項條件均居三標之首，若以對標案付出的價格為合理底限，條件全面更優的興國在相近價位取得，本身即已具備充分合理性。</p>
+      </div>
+    </div>
+
+
+  <!-- 06 留意 -->
+
+  <!-- 07 瑞禾觀點 -->
+  <div class="section">
+    <h2><span class="num">08</span>瑞禾觀點 — 給統一企業的建議</h2>
+    <div class="suggest">
+      <h2>瑞禾觀點</h2>
+      <ol>
+        <li><b>27 萬/坪 落在平地乙工趨勢線的合理範圍</b> — 文昌段純地 2024 年小筆已成交 26.8 萬，大型整街廓在 2026 年報 27 萬，幾乎等同兩年前小筆的水準；時間漲幅與大塊稀缺差異均尚未另行反映在價格中，值得納入整體評估。</li>
+        <li><b>大型成交是比一般小筆均價更合適的對標錨點</b> — 全家公司公告整批 11,163 坪、均價 12.5 萬、總額 14 億，經兩家估價師背書，是大塊乙工目前可驗證的最完整錨點。以此回推 2026 大型整街廓參考區間約 27～32 萬，興國 27 萬落在下緣。</li>
+        <li><b>興國橡膠的基地條件全面優於兩個對標案</b> — 距王田交流道（國道一號）約 2.1km（全家 7.3km、全聯 3.6km）；臨路面寬約 180m（全家 75m、全聯 50m）；門前道路寬 30m（全家 15m、全聯 20m）。三項條件均居首位，若以對標案作為價格底限，條件全面更優的興國在相近價位取得，本身即已具備充分合理性，值得以此框架評估。</li>
+        <li><b>大型基地的稀缺特質值得一併考量</b> — 大肚平地乙工 9 年來 ≥1,500 坪的成交紀錄共 5 筆，2019 年後再無大塊釋出。整街廓基地在市場上難以替代，等待的機會成本可與議價空間一起評估。</li>
+      </ol>
+    </div>
+
+
+</div>
+
+<footer class="footer">
+  <b>瑞禾不動產經紀股份有限公司</b>　｜　工業不動產專業顧問　｜　本報告為市場參考資訊，不構成投資建議；最終決策應結合現勘與專業諮詢。
+  <span class="small">資料來源：全家便利商店公開資訊觀測站重大訊息（2019-02-25，11,163 坪／12.5 萬/坪／總額 14 億）；內政部不動產交易實價查詢服務網（大肚區 2012～2025 年買賣資料）</span>
+  <span class="small"><a href="興國橡膠廠購置案進度說明與決策建議.html" style="color:#C0A434;text-decoration:none;">← 主簡報</a>　｜　<a href="興國橡膠整廠物件全台對標分析.html" style="color:#C0A434;text-decoration:none;">全台對標分析 →</a></span>
+
+</footer>
+
+</body></html>
