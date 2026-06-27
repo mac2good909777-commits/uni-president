@@ -232,6 +232,45 @@ body{padding-top:54px;}
   table.t th,table.t td{ padding:6px 8px; white-space:nowrap; }
 }
 
+/* ===== Closing Section ===== */
+.closing{background:var(--forest);color:#cfe0d2;padding:70px 24px 60px;text-align:center;margin-top:60px;}
+.closing .eng2{color:var(--gold);letter-spacing:8px;font-size:13px;font-weight:600;margin-bottom:18px;}
+.closing h2{font-size:36px;font-weight:700;letter-spacing:2px;color:#fff;line-height:1.4;margin-bottom:14px;}
+.closing h2 span{color:var(--gold);}
+.closing p{font-size:14.5px;color:rgba(255,255,255,.75);max-width:680px;margin:0 auto 40px;line-height:1.9;}
+.closing .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:860px;margin:0 auto;}
+.closing .card{background:rgba(255,255,255,.06);border:1px solid rgba(192,164,52,.3);border-radius:12px;padding:24px 26px;text-align:left;}
+.closing .card b.name{display:block;font-size:16px;color:#fff;font-weight:700;margin-bottom:2px;}
+.closing .card .role{font-size:12.5px;color:var(--gold);letter-spacing:1px;margin-bottom:14px;}
+.closing .card .row2{display:flex;align-items:center;gap:8px;font-size:13px;color:#cfe0d2;margin-bottom:6px;}
+.closing .card .row2 .ic2{font-size:15px;}
+.closing .card a{color:var(--gold);text-decoration:none;}
+.closing .card a:hover{text-decoration:underline;}
+/* ===== About Section ===== */
+.about{background:#fff;padding:60px 24px;border-top:1px solid var(--line);}
+.about h2{font-size:20px;color:var(--forest);border-left:4px solid var(--green);padding:8px 14px;margin-bottom:28px;background:linear-gradient(90deg,var(--cream) 0%,transparent 100%);}
+.about .inner{display:grid;grid-template-columns:320px 1fr;gap:30px;max-width:1080px;margin:0 auto;align-items:start;}
+.about .left-card{background:var(--forest);color:#fff;border-radius:14px;padding:32px 24px;text-align:center;}
+.about .avatar{width:80px;height:80px;border-radius:50%;background:var(--gold);color:var(--forest);font-size:32px;font-weight:700;line-height:80px;margin:0 auto 14px;}
+.about .left-card .aname{font-size:20px;font-weight:700;color:#fff;letter-spacing:2px;}
+.about .left-card .anick{color:var(--gold);font-size:14px;margin-left:8px;}
+.about .left-card .atitle{font-size:13px;color:#cfe0d2;margin-top:4px;margin-bottom:20px;}
+.about .left-card .spec{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.9;margin-bottom:20px;}
+.about .left-card .btn-profile{display:inline-block;background:var(--gold);color:var(--forest);font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;letter-spacing:.5px;}
+.about .right-card{background:#fff;}
+.about .blk{margin-bottom:22px;}
+.about .blk-label{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:3px;margin-bottom:10px;}
+.about .blk ul{list-style:disc;padding-left:18px;font-size:13.5px;color:#4a4a4a;line-height:2;}
+.about .tags{display:flex;flex-wrap:wrap;gap:8px;}
+.about .tags span{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:12.5px;color:var(--forest);}
+.about .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px;}
+.about .contact-row{display:flex;align-items:center;gap:8px;font-size:13px;color:#4a4a4a;}
+.about .contact-row .ci{font-size:15px;}
+@media(max-width:760px){
+  .closing .cards{grid-template-columns:1fr;}
+  .about .inner{grid-template-columns:1fr;}
+  .about .contact-grid{grid-template-columns:1fr;}
+}
 /* ===== Print: A4 landscape ===== */
 @media print{
   @page{ size:A4 landscape; margin:9mm; }
@@ -517,6 +556,74 @@ body{padding-top:54px;}
   </div>
 
 </div>
+
+<!-- ===== Closing ===== -->
+<section class="closing">
+  <div class="eng2">THANK YOU FOR YOUR ATTENTION</div>
+  <h2>期待成為大統益的<span>工業置產策略夥伴</span></h2>
+  <p>瑞禾秉持完整資訊、誠信告知，善盡專業管理人之責任，全程協助對接都計技師、建築師、地政士與法律顧問，確保交易結構穩健可行——為 貴公司創造資產最大價值。</p>
+  <div class="cards">
+    <div class="card">
+      <b class="name">張現傑　業務總監</b>
+      <div class="role">瑞禾開發 工業地產部 業務總監</div>
+      <div class="row2"><span class="ic2">📟</span> 0953-909777　｜　<span class="ic2">☎</span> 04-23803560</div>
+      <div class="row2"><span class="ic2">📋</span> 不動產經紀人 108 中市經紀字第 01847 號</div>
+    </div>
+    <div class="card">
+      <b class="name">瑞禾不動產經紀股份有限公司</b>
+      <div class="role">RUEI.HE REAL ESTATE BROKERAGE CO., LTD.</div>
+      <div class="row2"><span class="ic2">📍</span> 臺中市南屯區益豐路四段 91 號</div>
+      <div class="row2"><span class="ic2">🔗</span> <a href="https://rueihe.com" target="_blank">瑞禾工業地產 官方網站</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="about">
+  <div class="wrap">
+    <h2>關於現傑　｜　本案專案窗口</h2>
+    <div class="inner">
+      <div class="left-card">
+        <div class="avatar">張</div>
+        <div class="aname">張現傑 <span class="anick">Mac</span></div>
+        <div class="atitle">瑞禾開發 工業地產部 業務總監</div>
+        <div class="spec">工業地・廠房・產業用地<br>買賣租賃・設廠選址・地主資產活化</div>
+        <a class="btn-profile" href="https://mac2good909777-commits.github.io" target="_blank">🔗 關於現傑　個人介紹網站</a>
+      </div>
+      <div class="right-card">
+        <div class="blk">
+          <div class="blk-label">CAREER　經歷</div>
+          <ul>
+            <li>經濟部產業園區管理局專案　瑞禾開發 115 年計畫主持人</li>
+            <li>17+ 年不動產實務經驗，深耕中部工業不動產</li>
+            <li>完整訓練 信義集團 ／ 磐石工業地產</li>
+            <li>睦聚地產開發負責人</li>
+            <li>不動產經紀人 108 中市經紀字第 01847 號</li>
+          </ul>
+        </div>
+        <div class="blk">
+          <div class="blk-label">EXPERTISE　專業特長</div>
+          <div class="tags">
+            <span>中部工業不動產</span>
+            <span>企業設廠選址評估</span>
+            <span>地主資產活化規劃</span>
+            <span>土地開發可行性分析</span>
+            <span>都市計畫與使用變更</span>
+          </div>
+        </div>
+        <div class="blk">
+          <div class="blk-label">CONTACT　聯絡方式</div>
+          <div class="contact-grid">
+            <div class="contact-row"><span class="ci">📱</span> 手機　0953-909-777</div>
+            <div class="contact-row"><span class="ci">💬</span> LINE　0953909777</div>
+            <div class="contact-row"><span class="ci">📘</span> Facebook　工業地產筆記 粉絲專頁</div>
+            <div class="contact-row"><span class="ci">📍</span> 服務範圍　台中及中部地區</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <b>瑞禾不動產經紀股份有限公司</b>　｜　工業不動產專業顧問　｜　本簡報為顧問觀點與現況整理，提供決策參考，不構成投資建議。
