@@ -288,8 +288,9 @@ body{padding-top:54px;}
 /* ===== About Section ===== */
 .about{background:#fff;padding:48px 24px 56px;border-top:1px solid var(--line);}
 .about h2{font-size:20px;color:var(--forest);border-left:4px solid var(--green);padding:8px 14px;margin-bottom:28px;background:linear-gradient(90deg,var(--cream) 0%,transparent 100%);}
-.about .inner{display:grid;grid-template-columns:320px 1fr;gap:30px;max-width:1080px;margin:0 auto;align-items:start;}
-.about .left-card{background:var(--forest);color:#fff;border-radius:14px;padding:32px 24px;text-align:center;}
+.about .inner{display:grid;grid-template-columns:320px 1fr;gap:30px;max-width:1080px;margin:0 auto;align-items:stretch;}
+.about .left-card{background:var(--forest);color:#fff;border-radius:14px;padding:32px 24px;text-align:center;display:flex;flex-direction:column;}
+.about .left-card .btn-profile-wrap{margin-top:auto;}
 .about .avatar{width:80px;height:80px;border-radius:50%;background:var(--gold);color:var(--forest);font-size:32px;font-weight:700;line-height:80px;margin:0 auto 14px;}
 .about .left-card .aname{font-size:20px;font-weight:700;color:#fff;letter-spacing:2px;}
 .about .left-card .anick{color:var(--gold);font-size:14px;margin-left:8px;}
@@ -745,7 +746,7 @@ body{padding-top:54px;}
         <div class="aname">張現傑 <span class="anick">Mac</span></div>
         <div class="atitle">瑞禾開發 工業地產部 業務總監</div>
         <div class="spec">工業地・廠房・產業用地<br>買賣租賃・設廠選址・地主資產活化</div>
-        <a class="btn-profile" href="https://mac2good909777-commits.github.io/about-mac/" target="_blank">🔗 關於現傑　個人介紹網站</a>
+        <div class="btn-profile-wrap"><a class="btn-profile" href="https://mac2good909777-commits.github.io/about-mac/" target="_blank">🔗 關於現傑　個人介紹網站</a></div>
       </div>
       <div class="right-card">
         <div class="blk">
