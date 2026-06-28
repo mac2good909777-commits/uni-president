@@ -18,13 +18,15 @@ body { font-family: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft Jhe
 .topnav{
   position:fixed;top:0;left:0;right:0;z-index:1000;
   background:rgba(43,89,55,.96);backdrop-filter:blur(6px);
-  display:flex;align-items:center;gap:6px;padding:10px 22px;flex-wrap:wrap;
+  display:flex;align-items:center;gap:6px;padding:10px 22px;
   box-shadow:0 2px 12px rgba(0,0,0,.25);
 }
 .topnav .brand{display:flex;align-items:center;gap:10px;margin-right:auto;}
 .topnav .brand img{height:34px;background:#fff;border-radius:6px;padding:2px;}
 .topnav .brand b{color:#fff;font-size:14px;letter-spacing:1px;}
 .topnav .brand span{color:#C0A434;font-size:11px;display:block;letter-spacing:2px;}
+.nav-links{display:flex;align-items:center;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;flex:1;}
+.nav-links::-webkit-scrollbar{display:none;}
 .topnav a{color:#e8e8e0;text-decoration:none;font-size:12.5px;padding:6px 11px;border-radius:6px;transition:.2s;white-space:nowrap;}
 .topnav a:hover{background:#C0A434;color:#fff;}
 .topnav a.ext{color:#C0A434;border:1px solid rgba(192,164,52,.4);margin-left:4px;}
@@ -263,9 +265,11 @@ body { font-family: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft Jhe
   <div class="brand">
     <img src="logo-瑞禾.png" alt="瑞禾開發">
     <div><b>瑞禾開發 ｜ 建築・房產整合團隊</b><span>RUEI.HE REAL ESTATE DEVELOPMENT</span></div>
-
+  </div>
+  <div class="nav-links">
   <a href="興國橡膠廠購置案進度說明與決策建議.html">← 主簡報</a>
   <a href="興國橡膠整廠物件全台對標分析.html" class="ext">全台對標分析</a>
+  </div>
 </nav>
 
 <section class="cover" id="cover">
