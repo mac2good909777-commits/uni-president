@@ -2,6 +2,22 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
+<!-- Google tag (gtag.js) — GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H5VLHW8761"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  (function(){
+    var K='ga_internal', q=location.search, internal=false;
+    try{
+      if(q.indexOf('ga=off')>-1){ localStorage.setItem(K,'1'); }
+      if(q.indexOf('ga=on')>-1){ localStorage.removeItem(K); }
+      internal = localStorage.getItem(K)==='1';
+    }catch(e){}
+    gtag('config','G-H5VLHW8761', internal ? {traffic_type:'internal'} : {});
+  })();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>大肚大面積工業用地成交個案分析(全家・全聯)</title>
 <meta property="og:title" content="大肚大面積工業用地成交個案分析(全家・全聯)">
@@ -158,6 +174,36 @@ body { font-family: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft Jhe
 .suggest ol { padding-left: 22px; }
 .suggest li { margin-bottom: 12px; font-size: 15px; line-height: 1.75; }
 .suggest li b { color: #C0A434; }
+
+/* ── 07 山坡地劃出 ── */
+.slope-kpis { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:18px 0 22px; }
+.slope-kpi { background:#fff; border:1px solid #DCD9CF; border-left:4px solid #4B872F; border-radius:6px; padding:14px 18px; }
+.slope-kpi .lbl { font-size:12px; color:#6B7568; letter-spacing:.5px; }
+.slope-kpi .val { font-size:18px; font-weight:800; color:#2B5937; margin-top:4px; line-height:1.45; }
+.slope-kpi.gold { border-left-color:#C0A434; }
+.slope-kpi.gold .val { color:#8A7320; }
+
+.tl { position:relative; margin:10px 0 6px; padding-left:28px; }
+.tl::before { content:""; position:absolute; left:9px; top:10px; bottom:10px; width:2px; background:#DCD9CF; }
+.tl-step { position:relative; background:#fff; border:1px solid #DCD9CF; border-radius:6px; padding:12px 16px; margin-bottom:10px; }
+.tl-step::before { content:""; position:absolute; left:-24px; top:16px; width:11px; height:11px; border-radius:50%; background:#DCD9CF; border:2px solid #F5F3EE; }
+.tl-step.done::before { background:#4B872F; }
+.tl-step.now::before { background:#C0A434; box-shadow:0 0 0 4px rgba(192,164,52,.22); }
+.tl-step .st { font-size:11.5px; font-weight:700; letter-spacing:1px; color:#6B7568; }
+.tl-step.done .st { color:#4B872F; }
+.tl-step.now .st { color:#8A7320; }
+.tl-step h4 { font-size:15px; color:#1F2A1F; margin:2px 0 5px; }
+.tl-step p { font-size:13.5px; color:#4A5248; line-height:1.75; }
+
+.tbd { display:inline-block; border:1px dashed #C0A434; background:#FBF7E8; color:#8A7320;
+  border-radius:4px; padding:1px 9px; font-size:12.5px; font-weight:700; letter-spacing:.5px; white-space:nowrap; }
+
+@media (max-width: 860px) {
+  .slope-kpis { grid-template-columns: 1fr; }
+}
+@media print {
+  .tl-step, .slope-kpi { break-inside: avoid; }
+}
 
 .footer { background: #2B5937; color: #cfe0d2; padding: 26px; margin-top: 40px; text-align: center; font-size: 13px; letter-spacing: .5px; border-top: 3px solid #C0A434; }
 .footer b { color: #fff; }
@@ -548,7 +594,76 @@ body { font-family: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft Jhe
 
   <!-- 06 留意 -->
 
-  <!-- 07 瑞禾觀點 -->
+  <!-- 07 山坡地劃出 -->
+  <div class="section" id="slope">
+    <h2><span class="num">07</span>山坡地劃出 — 辦理現況與預估進度</h2>
+    <p class="lead">本案基地現仍套用山坡地法規，對開發的直接影響在於<b>建築高度上限</b>。劃出程序已由屋主送件並取得市府回覆意見，完成後高度規範即可重新評估 — 這是影響開發強度上限的關鍵變數，謹將現況與時程整理如下。</p>
+
+    <div class="slope-kpis">
+      <div class="slope-kpi">
+        <div class="lbl">目前階段</div>
+        <div class="val">已送件・市府已回覆意見</div>
+      </div>
+      <div class="slope-kpi gold">
+        <div class="lbl">預估完成</div>
+        <div class="val">最晚 1 年內<br><span class="tbd">預定核定日：待補</span></div>
+      </div>
+      <div class="slope-kpi">
+        <div class="lbl">主要影響項目</div>
+        <div class="val">建築高度上限 21.6 m</div>
+      </div>
+    </div>
+
+    <div class="sub-title">辦理進度</div>
+    <div class="tl">
+      <div class="tl-step done">
+        <div class="st">STEP 1　已完成</div>
+        <h4>山坡地範圍劃出送件</h4>
+        <p>由屋主委請水土保持專業單位辦理劃出送件。送件日期：<span class="tbd">待補</span></p>
+      </div>
+      <div class="tl-step done">
+        <div class="st">STEP 2　已完成</div>
+        <h4>市府審查、回覆意見</h4>
+        <p>已獲市府回覆審查意見，<b>待依建議事項修正後即有機會劃出</b>。回覆日期與意見摘要：<span class="tbd">待補</span></p>
+      </div>
+      <div class="tl-step now">
+        <div class="st">STEP 3　進行中</div>
+        <h4>依審查意見修正補件</h4>
+        <p>目前所處階段。修正補件送出日期與補正內容：<span class="tbd">待補</span></p>
+      </div>
+      <div class="tl-step">
+        <div class="st">STEP 4　待辦</div>
+        <h4>核定劃出</h4>
+        <p>據送件窗口表示，因主管機關人力不足致時程延遲，<b>最晚一年內會完成</b>；已向本案建築師確認，建築師評估時程差異不大。預定核定日：<span class="tbd">待補</span></p>
+      </div>
+      <div class="tl-step">
+        <div class="st">STEP 5　待辦</div>
+        <h4>高度規範重新評估</h4>
+        <p>完成劃出後即不再適用「加強山坡地建築管理與技術規則」之高度公式，可重新評估開發強度上限。重新評估後可用高度：<span class="tbd">待補</span></p>
+      </div>
+    </div>
+
+    <div class="sub-title">劃出前後影響對照</div>
+    <div class="comp-table-wrap"><table class="comp-table">
+      <thead><tr><th>項目</th><th>劃出前（現況）</th><th>劃出後（預期）</th></tr></thead>
+      <tbody>
+        <tr><td>高度適用法規</td><td>加強山坡地建築管理與技術規則</td><td>回歸都市計畫與建築技術規則一般規定</td></tr>
+        <tr class="highlight"><td>建築高度上限</td><td><b>21.6 m</b>（容積率 210% ÷ 建蔽率 70% × 3.6 × 2）<br>約 7 m 廠房 3 層；不含屋頂突出物、水塔</td><td><span class="tbd">重新評估後待補</span></td></tr>
+        <tr><td>特定區計畫高度比</td><td colspan="2">本基地屬「高速公路王田交流道附近特定區計畫」區內土地之工業區，有機會以高度比方式規範高度（劃出前後均須一併評估）</td></tr>
+        <tr><td>軍事管制區會辦</td><td colspan="2">福吉段適用：基地海拔＋建物主體高度在 <b>173 m</b> 以下無須再行會辦軍方審查，由建築師簽證併入建照審查（不受劃出影響）</td></tr>
+        <tr><td>其他影響<br><span style="font-size:12px;color:#6B7568;">（水土保持程序、開發審議等）</span></td><td><span class="tbd">待補</span></td><td><span class="tbd">待補</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="risk">
+      <h3>⚠ 時程說明與揭露</h3>
+      上述進度係依送件窗口與本案建築師於 <b>2026-07</b> 之回覆整理；劃出核定屬主管機關權責，實際完成時間仍可能變動，本頁不就核定時點作任何保證。標示 <span class="tbd">待補</span> 之欄位將於取得正式文件後更新。
+      <div style="margin-top:8px;">詳細建築師說明請參閱：<a href="大肚乙工_建築師諮詢確認說明.html" style="color:#4B872F;font-weight:700;">《大肚乙工・建築師諮詢確認說明》</a></div>
+    </div>
+  </div>
+
+
+  <!-- 08 瑞禾觀點 -->
   <div class="section">
     <h2><span class="num">08</span>瑞禾觀點 — 給統一企業的建議</h2>
     <div class="suggest">
