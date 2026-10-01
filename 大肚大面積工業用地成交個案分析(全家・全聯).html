@@ -205,6 +205,40 @@ body { font-family: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft Jhe
   .tl-step, .slope-kpi { break-inside: avoid; }
 }
 
+/* ── 10 近三年實登明細 ── */
+.yr-row { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0 10px; }
+.yr-card { background:#fff; border:1px solid #DCD9CF; border-top:3px solid #4B872F; border-radius:6px; padding:12px 14px; text-align:center; }
+.yr-card .y { font-size:12px; color:#6B7568; letter-spacing:1px; font-weight:700; }
+.yr-card .v { font-size:24px; font-weight:800; color:#2B5937; line-height:1.25; }
+.yr-card .v em { font-size:13px; font-style:normal; font-weight:700; color:#6B7568; }
+.yr-card .c { font-size:11.5px; color:#8A9189; }
+.yr-card:last-child { border-top-color:#C0A434; }
+.yr-card:last-child .v { color:#8A7320; }
+.yr-note { font-size:12px; color:#6B7568; line-height:1.65; margin-bottom:6px; }
+
+.scroll-hint { display:none; font-size:11.5px; color:#8A7320; margin:10px 0 4px; text-align:center; letter-spacing:1px; }
+.comp-table.lvr { font-size:12.5px; min-width:1020px; }
+.comp-table.lvr td, .comp-table.lvr th { padding:7px 9px; vertical-align:top; }
+.comp-table.lvr .nw { white-space:nowrap; }
+.comp-table.lvr .nt { font-size:11px; color:#8A9189; line-height:1.5; max-width:190px; }
+.comp-table.lvr .na { color:#C3C8C2; }
+.comp-table.lvr .lk a { color:#4B872F; font-weight:700; text-decoration:none; border-bottom:1px solid rgba(75,135,47,.35); }
+.comp-table.lvr .lk a:hover { color:#2B5937; border-bottom-color:#2B5937; }
+.comp-table.lvr tr.sp { background:#FBF4EC !important; }
+.comp-table.lvr .flag { display:inline-block; background:#B85A1A; color:#fff; border-radius:3px;
+  padding:0 6px; font-size:10.5px; font-weight:700; letter-spacing:.5px; margin-left:4px; white-space:nowrap; }
+.risk div { margin-bottom:5px; }
+
+@media (max-width: 860px) {
+  .yr-row { grid-template-columns:repeat(2,1fr); }
+  .scroll-hint { display:block; }
+}
+@media print {
+  .comp-table.lvr { font-size:9pt; min-width:0; }
+  .comp-table.lvr .lk { display:none; }
+  .yr-card { break-inside:avoid; }
+}
+
 .footer { background: #2B5937; color: #cfe0d2; padding: 26px; margin-top: 40px; text-align: center; font-size: 13px; letter-spacing: .5px; border-top: 3px solid #C0A434; }
 .footer b { color: #fff; }
 .footer .small { font-size: 11.5px; opacity: 0.8; margin-top: 6px; display: block; }
@@ -724,6 +758,76 @@ body { font-family: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft Jhe
         <li><b>法規進度與價格要分開看</b> — 山坡地劃出尚在辦理（見第 08 節），完成後高度規範可重新評估，屬於<b>向上的選擇權</b>而非既有條件；建議以現行 21.6 m 高度上限為評估基準，劃出後的增益不計入現在的出價假設。</li>
       </ol>
     </div>
+
+
+  <!-- 10 近三年實價登錄明細 -->
+  <div class="section" id="lvr3y">
+    <h2><span class="num">10</span>近三年實價登錄明細 — 每筆附街景與地圖</h2>
+    <p class="lead">範圍：臺中市大肚區、使用分區含「工」、<b>2023-10 ～ 2026-09（36 個月）</b>全部買賣登錄，共 <b>33 筆</b>，未做任何篩選省略。地坪單價一律以「總價 ÷ 土地移轉面積」自算（不採用登錄表的公告單價，該欄在房地案會被建物灌高）。點「街景」「地圖」可直接開 Google 地圖現場查看。</p>
+
+    <div class="yr-row">
+      <div class="yr-card"><div class="y">2023</div><div class="v">18.0<em> 萬</em></div><div class="c">房地中位・1 筆</div></div>
+      <div class="yr-card"><div class="y">2024</div><div class="v">20.8<em> 萬</em></div><div class="c">房地中位・3 筆</div></div>
+      <div class="yr-card"><div class="y">2025</div><div class="v">22.9<em> 萬</em></div><div class="c">房地中位・3 筆</div></div>
+      <div class="yr-card"><div class="y">2026</div><div class="v">27.5<em> 萬</em></div><div class="c">房地中位・2 筆</div></div>
+    </div>
+    <p class="yr-note">＊上列為<b>房地型</b>（土地＋建物）逐年地坪單價中位數，已剔除備註載明特殊關係之交易。房地型受建物貢獻影響較小、樣本型態一致，趨勢可讀；純土地因近三年成交幾乎集中在福山段／福德段山坡側小筆，中位偏低且不具代表性，故不另列趨勢。<b>各年房地樣本僅 1～3 筆，屬小樣本，只能看方向、不能當精確指數</b>；完整判讀請併同第 03、04 節的長期階梯。</p>
+
+    <p class="scroll-hint">← 表格可左右滑動 →</p>
+    <div class="comp-table-wrap"><table class="comp-table lvr">
+      <thead><tr>
+        <th class="nw">交易年月</th><th>標的位置</th><th class="nw">型態</th>
+        <th class="num">土地坪</th><th class="num">建物坪</th><th class="num">建地比</th>
+        <th class="num">總價(萬)</th><th class="num">地坪單價<br>(萬/坪)</th>
+        <th class="nw">現場</th><th>登錄備註</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="nw">2026-07</td><td>福山段90地號</td><td class="nw">純土地</td><td class="num">37.0</td><td class="num">—</td><td class="num">—</td><td class="num">400</td><td class="num"><b>10.80</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%B1%B1%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">本買賣標的未連接道路含土地增值稅或其他稅費35988元；</td></tr>
+        <tr class="sp"><td class="nw">2026-03</td><td>沙田路二段102巷26之11號 <span class="flag">特殊關係</span></td><td class="nw">房地</td><td class="num">15.2</td><td class="num">35.7</td><td class="num">2.35</td><td class="num">488</td><td class="num"><b>32.08</b></td><td class="nw lk"><a href="https://www.google.com/maps/place/%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%B2%99%E7%94%B0%E8%B7%AF%E4%BA%8C%E6%AE%B5102%E5%B7%B726%E4%B9%8B11%E8%99%9F/data=!3m1!1e3" target="_blank" rel="noopener">街景</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%B2%99%E7%94%B0%E8%B7%AF%E4%BA%8C%E6%AE%B5102%E5%B7%B726%E4%B9%8B11%E8%99%9F" target="_blank" rel="noopener">地圖</a></td><td class="nt">親友、員工、共有人或其他特殊關係間之交易；未登記建物；</td></tr>
+        <tr><td class="nw">2026-02</td><td>王福街988巷88弄17號</td><td class="nw">房地</td><td class="num">176.9</td><td class="num">79.2</td><td class="num">0.45</td><td class="num">4,945</td><td class="num"><b>27.95</b></td><td class="nw lk"><a href="https://www.google.com/maps/place/%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%8E%8B%E7%A6%8F%E8%A1%97988%E5%B7%B788%E5%BC%8417%E8%99%9F/data=!3m1!1e3" target="_blank" rel="noopener">街景</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%8E%8B%E7%A6%8F%E8%A1%97988%E5%B7%B788%E5%BC%8417%E8%99%9F" target="_blank" rel="noopener">地圖</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2026-02</td><td>王福街988巷88弄19號</td><td class="nw">房地</td><td class="num">204.7</td><td class="num">63.9</td><td class="num">0.31</td><td class="num">5,555</td><td class="num"><b>27.13</b></td><td class="nw lk"><a href="https://www.google.com/maps/place/%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%8E%8B%E7%A6%8F%E8%A1%97988%E5%B7%B788%E5%BC%8419%E8%99%9F/data=!3m1!1e3" target="_blank" rel="noopener">街景</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%8E%8B%E7%A6%8F%E8%A1%97988%E5%B7%B788%E5%BC%8419%E8%99%9F" target="_blank" rel="noopener">地圖</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2025-12</td><td>福山段80-1地號</td><td class="nw">純土地</td><td class="num">44.3</td><td class="num">—</td><td class="num">—</td><td class="num">346</td><td class="num"><b>7.80</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%B1%B1%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2025-11</td><td>沙田路二段2巷21之5號</td><td class="nw">房地</td><td class="num">93.6</td><td class="num">99.2</td><td class="num">1.06</td><td class="num">2,970</td><td class="num"><b>31.73</b></td><td class="nw lk"><a href="https://www.google.com/maps/place/%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%B2%99%E7%94%B0%E8%B7%AF%E4%BA%8C%E6%AE%B52%E5%B7%B721%E4%B9%8B5%E8%99%9F/data=!3m1!1e3" target="_blank" rel="noopener">街景</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%B2%99%E7%94%B0%E8%B7%AF%E4%BA%8C%E6%AE%B52%E5%B7%B721%E4%B9%8B5%E8%99%9F" target="_blank" rel="noopener">地圖</a></td><td class="nt">其他增建；</td></tr>
+        <tr><td class="nw">2025-11</td><td>沙田路二段2巷23號</td><td class="nw">房地</td><td class="num">524.1</td><td class="num">556.4</td><td class="num">1.06</td><td class="num">12,000</td><td class="num"><b>22.89</b></td><td class="nw lk"><a href="https://www.google.com/maps/place/%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%B2%99%E7%94%B0%E8%B7%AF%E4%BA%8C%E6%AE%B52%E5%B7%B723%E8%99%9F/data=!3m1!1e3" target="_blank" rel="noopener">街景</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%B2%99%E7%94%B0%E8%B7%AF%E4%BA%8C%E6%AE%B52%E5%B7%B723%E8%99%9F" target="_blank" rel="noopener">地圖</a></td><td class="nt">—</td></tr>
+        <tr class="sp"><td class="nw">2025-09</td><td>福和北段264地號 <span class="flag">特殊關係</span></td><td class="nw">純土地</td><td class="num">161.3</td><td class="num">—</td><td class="num">—</td><td class="num">995</td><td class="num"><b>6.17</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%92%8C%E5%8C%97%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">親友、員工、共有人或其他特殊關係間之交易；</td></tr>
+        <tr><td class="nw">2025-09</td><td>福山段81地號</td><td class="nw">純土地</td><td class="num">211.7</td><td class="num">—</td><td class="num">—</td><td class="num">1,651</td><td class="num"><b>7.80</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%B1%B1%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2025-07</td><td>溪洲段15-3地號</td><td class="nw">房地</td><td class="num">373.8</td><td class="num">243.7</td><td class="num">0.65</td><td class="num">5,900</td><td class="num"><b>15.78</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%BA%AA%E6%B4%B2%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2025-07</td><td>南王田段471地號</td><td class="nw">純土地</td><td class="num">39.6</td><td class="num">—</td><td class="num">—</td><td class="num">480</td><td class="num"><b>12.13</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E5%8D%97%E7%8E%8B%E7%94%B0%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2025-07</td><td>溪洲段8-1地號</td><td class="nw">純土地</td><td class="num">100.1</td><td class="num">—</td><td class="num">—</td><td class="num">3,003</td><td class="num"><b>29.99</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%BA%AA%E6%B4%B2%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2025-03</td><td>福山段801地號</td><td class="nw">純土地</td><td class="num">170.4</td><td class="num">—</td><td class="num">—</td><td class="num">971</td><td class="num"><b>5.70</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%B1%B1%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2025-03</td><td>福德段989地號</td><td class="nw">純土地</td><td class="num">365.1</td><td class="num">—</td><td class="num">—</td><td class="num">1,500</td><td class="num"><b>4.11</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%BE%B7%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">未臨路</td></tr>
+        <tr><td class="nw">2025-03</td><td>福德段1120地號</td><td class="nw">純土地</td><td class="num">385.5</td><td class="num">—</td><td class="num">—</td><td class="num">2,506</td><td class="num"><b>6.50</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%BE%B7%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr class="sp"><td class="nw">2025-01</td><td>福山段108地號 <span class="flag">特殊關係</span></td><td class="nw">純土地</td><td class="num">26.9</td><td class="num">—</td><td class="num">—</td><td class="num">108</td><td class="num"><b>4.00</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%B1%B1%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">親友、員工、共有人或其他特殊關係間之交易；</td></tr>
+        <tr><td class="nw">2025-01</td><td>福德段1143地號</td><td class="nw">純土地</td><td class="num">15.3</td><td class="num">—</td><td class="num">—</td><td class="num">135</td><td class="num"><b>8.85</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%BE%B7%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2024-11</td><td>沙田路二段102巷19弄3號</td><td class="nw">房地</td><td class="num">96.6</td><td class="num">90.7</td><td class="num">0.94</td><td class="num">2,930</td><td class="num"><b>30.34</b></td><td class="nw lk"><a href="https://www.google.com/maps/place/%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%B2%99%E7%94%B0%E8%B7%AF%E4%BA%8C%E6%AE%B5102%E5%B7%B719%E5%BC%843%E8%99%9F/data=!3m1!1e3" target="_blank" rel="noopener">街景</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%B2%99%E7%94%B0%E8%B7%AF%E4%BA%8C%E6%AE%B5102%E5%B7%B719%E5%BC%843%E8%99%9F" target="_blank" rel="noopener">地圖</a></td><td class="nt">頂樓加蓋；</td></tr>
+        <tr><td class="nw">2024-10</td><td>文昌段546地號</td><td class="nw">純土地</td><td class="num">359.4</td><td class="num">—</td><td class="num">—</td><td class="num">7,547</td><td class="num"><b>21.00</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%96%87%E6%98%8C%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2024-09</td><td>文昌段585地號</td><td class="nw">純土地</td><td class="num">592.0</td><td class="num">—</td><td class="num">—</td><td class="num">15,866</td><td class="num"><b>26.80</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%96%87%E6%98%8C%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2024-07</td><td>北王田段349地號</td><td class="nw">純土地</td><td class="num">200.8</td><td class="num">—</td><td class="num">—</td><td class="num">4,960</td><td class="num"><b>24.70</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E5%8C%97%E7%8E%8B%E7%94%B0%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr class="sp"><td class="nw">2024-06</td><td>王福段1353地號 <span class="flag">特殊關係</span></td><td class="nw">純土地</td><td class="num">35.5</td><td class="num">—</td><td class="num">—</td><td class="num">114</td><td class="num"><b>3.20</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%8E%8B%E7%A6%8F%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">親友、員工、共有人或其他特殊關係間之交易；包含公共設施保留地用地；</td></tr>
+        <tr class="sp"><td class="nw">2024-06</td><td>王福段1353地號 <span class="flag">特殊關係</span></td><td class="nw">純土地</td><td class="num">20.1</td><td class="num">—</td><td class="num">—</td><td class="num">64</td><td class="num"><b>3.20</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%8E%8B%E7%A6%8F%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">親友、員工、共有人或其他特殊關係間之交易；包含公共設施保留地用地；</td></tr>
+        <tr><td class="nw">2024-06</td><td>沙田路二段132巷80弄248號</td><td class="nw">房地</td><td class="num">46.1</td><td class="num">58.9</td><td class="num">1.28</td><td class="num">962</td><td class="num"><b>20.85</b></td><td class="nw lk"><a href="https://www.google.com/maps/place/%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%B2%99%E7%94%B0%E8%B7%AF%E4%BA%8C%E6%AE%B5132%E5%B7%B780%E5%BC%84248%E8%99%9F/data=!3m1!1e3" target="_blank" rel="noopener">街景</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%B2%99%E7%94%B0%E8%B7%AF%E4%BA%8C%E6%AE%B5132%E5%B7%B780%E5%BC%84248%E8%99%9F" target="_blank" rel="noopener">地圖</a></td><td class="nt">頂樓加蓋；其他增建；</td></tr>
+        <tr><td class="nw">2024-04</td><td>文昌段2495-3地號</td><td class="nw">純土地</td><td class="num">2.1</td><td class="num">—</td><td class="num">—</td><td class="num">22</td><td class="num"><b>10.39</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%96%87%E6%98%8C%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2024-03</td><td>福山段802地號</td><td class="nw">純土地</td><td class="num">419.9</td><td class="num">—</td><td class="num">—</td><td class="num">2,393</td><td class="num"><b>5.70</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%B1%B1%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2024-03</td><td>福德段1120地號</td><td class="nw">純土地</td><td class="num">1,195.3</td><td class="num">—</td><td class="num">—</td><td class="num">7,770</td><td class="num"><b>6.50</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%BE%B7%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2024-02</td><td>福山段85地號</td><td class="nw">純土地</td><td class="num">14.8</td><td class="num">—</td><td class="num">—</td><td class="num">237</td><td class="num"><b>16.00</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%B1%B1%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2024-02</td><td>紙廠路29號</td><td class="nw">房地</td><td class="num">38.7</td><td class="num">39.0</td><td class="num">1.01</td><td class="num">620</td><td class="num"><b>16.01</b></td><td class="nw lk"><a href="https://www.google.com/maps/place/%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%B4%99%E5%BB%A0%E8%B7%AF29%E8%99%9F/data=!3m1!1e3" target="_blank" rel="noopener">街景</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%B4%99%E5%BB%A0%E8%B7%AF29%E8%99%9F" target="_blank" rel="noopener">地圖</a></td><td class="nt">—</td></tr>
+        <tr class="sp"><td class="nw">2024-02</td><td>北王田段733-1地號 <span class="flag">特殊關係</span></td><td class="nw">純土地</td><td class="num">24.9</td><td class="num">—</td><td class="num">—</td><td class="num">601</td><td class="num"><b>24.14</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E5%8C%97%E7%8E%8B%E7%94%B0%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">政府機關標讓售；</td></tr>
+        <tr><td class="nw">2024-01</td><td>福山段124地號</td><td class="nw">純土地</td><td class="num">24.5</td><td class="num">—</td><td class="num">—</td><td class="num">196</td><td class="num"><b>8.00</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%B1%B1%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">包含公共設施保留地用地；</td></tr>
+        <tr><td class="nw">2024-01</td><td>福山段84-1地號</td><td class="nw">純土地</td><td class="num">48.9</td><td class="num">—</td><td class="num">—</td><td class="num">783</td><td class="num"><b>16.00</b></td><td class="nw lk"><span class="na">—</span> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E7%A6%8F%E5%B1%B1%E6%AE%B5" target="_blank" rel="noopener">地段</a></td><td class="nt">—</td></tr>
+        <tr><td class="nw">2023-10</td><td>沙田路二段132巷80弄284號</td><td class="nw">房地</td><td class="num">45.5</td><td class="num">58.9</td><td class="num">1.29</td><td class="num">818</td><td class="num"><b>17.97</b></td><td class="nw lk"><a href="https://www.google.com/maps/place/%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%B2%99%E7%94%B0%E8%B7%AF%E4%BA%8C%E6%AE%B5132%E5%B7%B780%E5%BC%84284%E8%99%9F/data=!3m1!1e3" target="_blank" rel="noopener">街景</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%B8%82%E5%A4%A7%E8%82%9A%E5%8D%80%E6%B2%99%E7%94%B0%E8%B7%AF%E4%BA%8C%E6%AE%B5132%E5%B7%B780%E5%BC%84284%E8%99%9F" target="_blank" rel="noopener">地圖</a></td><td class="nt">—</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="risk">
+      <h3>⚠ 判讀注意</h3>
+      <div>① <b>底色標示「特殊關係」者不可當行情</b> — 親友／員工／共有人間交易、政府機關標讓售等，價格不反映市場，僅列出供完整揭露。</div>
+      <div>② <b>建地比＝建物坪÷土地坪，是建物貢獻度</b> — 兩筆地坪單價的差異往往來自建物多寡而非地價。比較時請先看這一欄：舊廠房（建地比低）看地坪單價，新廠房與廠辦另需併看建物單價。</div>
+      <div>③ <b>純土地列只有地號、沒有門牌</b> — 「地段」連結僅定位到該地段概略範圍，非精確宗地界線；確切位置請以地籍圖為準。</div>
+      <div>④ <b>山坡側與平地／市區不可混用</b> — 福山段、福德段、福和段位於大肚山坡側，單價 4～8 萬；文昌段、溪洲段及沙田路／王福街一帶為平地與市區，單價 21～30 萬。兩者不是同一個市場。</div>
+      <div style="margin-top:8px;">資料來源：內政部不動產交易實價查詢服務網，截至 2026 年第三季揭露。</div>
+    </div>
+  </div>
+
 
 
 </div>
